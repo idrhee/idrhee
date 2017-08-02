@@ -1,0 +1,168 @@
+---
+title: 'Public Opinion Survey: Kenyan Presidential Elections'
+author: "Inbok Rhee"
+date: "7/31/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Intro
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=12, fig.height=8}
+
+library(MCMCpack)
+library(lubridate)
+library(reshape2)
+library(extrafont)
+library(ggplot2)
+library(rvest)
+library(ggrepel)
+library(ggthemes)
+library(scales)
+
+# 1. Get Data --------------------------------------------------------------
+
+surveys <- read.csv("/Users/idrhee/Dropbox/_doc/_archive/2017-2018/opinion_polls/2014_Seoul_Mayoral_Election_Analysis-master/kenya2017_fin.csv")
+surveys$sample <- surveys$sample/surveys$days
+surveys$day <- as.character(surveys$day)
+surveys$day <- as.Date(surveys$day, "%Y%m%d")
+
+surveys$firm[surveys$firm=="Star"] <- "Radio Africa Group"
+surveys$firm1[surveys$firm1=="Star"] <- "Radio Africa Group"
+
+
+
+# 2. Overtime Plot --------------------------------------------------------
+
+surveys_new <- within(surveys, {
+  N   <- sample #*(uhuru + raila)/100
+  N_j <- N * uhuru /100
+  N_p <- N * raila /100
+  N_e <- sample * (100 - uhuru - raila)/100 
+  dt  <- ymd(day)
+})
+
+library(ggrepel)
+library(ggthemes)
+library(RColorBrewer)
+j_brew_colors <- brewer.pal(n = 8, name = "Set1")
+
+surveys_new$dminus <- as.Date("2017-08-08")- as.Date(surveys_new$day, "%Y%m%d")
+surveys_new$gap <- surveys_new$uhuru-surveys_new$raila
+
+a <- melt(surveys_new, id.vars='dt', measure.vars =c('uhuru', 'raila'))
+
+ggplot(melt(surveys_new, id.vars=c('dt', 'firm', 'firm1'), 
+            measure.vars =c('uhuru', 'raila')), aes(dt, value)) + 
+  geom_point(aes(shape=firm), alpha = 0.5, size=2) + 
+  stat_smooth(aes(colour=variable), method = "loess") + 
+  scale_y_continuous("Support (%)") + 
+  scale_x_date(date_breaks = "1 month",  
+               limits=as.Date(c("2016-03-01", "2017-08-01")),
+               labels = date_format("%Y-%m")) + 
+  theme_few() +
+  labs(title = "2017: Candidate Support (%)",
+       subtitle = "(Lowess fitting)",
+       caption = "Source: Information from Various Polling Firms and News Media", 
+       x = "Date", y = "Support (%)") +
+  scale_color_manual(name  ="Candidates",
+                     breaks=c("uhuru", "raila"),
+                     labels=c("Uhuru", "Raila"),
+                     values = c(j_brew_colors[1], j_brew_colors[5])) +
+  scale_shape_discrete(solid=F, name  ="Polling Firms",
+                       breaks=c("IPSOS", "Info Trak", "Radio Africa Group", "Zogby", "Centre for African Progress"),
+                       labels=c("IPSOS", "InfoTrak", "Star/Radio Africa", "Zogby", "Centre for African Progress")) +  
+  theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust=1))
+
+
+```
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=12, fig.height=8}
+
+
+ggplot(surveys_new, aes(dt, gap)) +
+  geom_point(aes(shape=firm), alpha = 0.5, size=2) +
+  stat_smooth(method = "loess") +
+  scale_x_date(date_breaks = "1 month", 
+               limits=as.Date(c("2016-03-01", "2017-08-01")),
+               labels = date_format("%Y-%m")) +
+  theme_few() +
+  labs(title = "2017: Uhuru Rupport - Raila Support",
+       subtitle = "(Lowess fitting)",
+       caption = "Source: Information from Various Polling Firms and News Media", 
+       x = "Date", y = "Uhuru Support - Raila Support(%)") +
+  scale_shape_discrete(solid=F, name  ="Polling Firms",
+                       breaks=c("IPSOS", "Info Trak", "Radio Africa Group", "Zogby", "Centre for African Progress"),
+                       labels=c("IPSOS", "InfoTrak", "Star/Radio Africa", "Zogby", "Centre for African Progress")) + 
+  theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust=1)) 
+```
+
+
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=12, fig.height=8}
+# 5. Bayesian Prediction --------------------------------------------------
+
+
+library(ggmcmc, quietly = T)
+library(plyr,quietly = T)
+
+surveys_new <- surveys_new[order(surveys_new$dt,decreasing=F),]
+surveys_new$N <- with(surveys_new, {N_j + N_p + N_e})
+
+
+surveys_new_aggr <- ddply(surveys_new, "firm", summarize, N_j=sum(N_j), N=sum(N), N_p=sum(N_p), N_e=sum(N_e))
+
+surveys_new <- surveys_new[!is.na(surveys_new$N),]
+
+#uniform prior 
+alpha <- c(1,1,1)
+#alpha <- c(50.51,43.7)
+
+baye_diffs <- c()
+freq_diff <- c()
+ci <- c()
+#sequential learning  
+for(i in 1:nrow(surveys_new)){
+  obs <- unlist(surveys_new[i, c("N_j", "N_p", "N_e")])
+  post <- MCmultinomdirichlet(obs, alpha, mc=100000)
+  baye_diffs <- append(baye_diffs, round(mean(post[,1] - post[,2]), 3))
+  alpha <- (alpha + obs)
+  
+  #samp <- rdirichlet(n, as.vector(alpha))
+  #obs[1]/sum(obs) 
+  #p <- obs[1]/sum(obs)
+  #plus_minus <- qnorm(0.975) * sqrt( (obs[1]/sum(obs) * sum(obs[c(2,3)])/sum(obs))/(sum(obs) - 1))
+  #print(sprintf("%f +- %f", p, plus_minus))
+  
+  p_1 <- obs[1]/sum(obs)
+  p_2 <- obs[2]/sum(obs)
+  conf_interval <- qnorm(0.975) * 1/sqrt(sum(obs)) * sqrt(p_1 *(1- p_1) + p_2 * (1 - p_2) + 2 * p_1 * p_2)
+  freq_diff <- append(freq_diff, p_1 - p_2)
+  ci <- append(ci, conf_interval)
+}
+
+
+
+diff_dist <- data.frame(diffs_val=as.numeric((post[,1] - post[,2]))*100)
+
+mdiff <- mean(diff_dist$diffs_val)
+
+error <- qt(0.975,df=length(diff_dist$diffs_val)-1)*sd(diff_dist$diffs_val)/sqrt(length(diff_dist$diffs_val))
+left <- mean(diff_dist$diffs_val)-error
+right <- mean(diff_dist$diffs_val)+error
+
+
+ggplot(diff_dist, aes(diffs_val)) + 
+  geom_histogram(binwidth=0.1) + 
+  scale_x_continuous(breaks=round(c(as.vector(summary(diff_dist$diffs_val))), digits=3)) +
+  theme_bw() +
+  labs(title = "Expexted Difference Between Uhuru and Raila Support",
+       subtitle = "Mean Posterior from Monte Carlo Simulation (100,000 times)",
+       caption = "Source: Information from Various Polling Firms and News Media", 
+       x = paste("Mean of Uhuru Support - Raila Support", 
+                 "\n (Min, 1Q, Mean, 3Q, Max)"), y = "Number of Times")
+```
+
