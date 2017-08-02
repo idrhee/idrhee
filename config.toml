@@ -1,5 +1,4 @@
-baseurl = "https://inbokrhee.com"
-baseurl = "/"
+baseurl = "https://solicitor-byron-27603.netlify.com"
 title = "Inbok Rhee"
 copyright = "&copy; 2017 Inbok Rhee"
 theme = "academic"
