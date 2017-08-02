@@ -49,7 +49,7 @@ My dissertation investigates the logic of legislator attention in developing dem
 
 My research has been supported by the [Fulbright-Hays Doctoral Dissertation Research Abroad (DDRA) Fellowship](https://ed.gov/programs/iegpsddrap/index.html), [National Science Foundation (NSF) Doctoral Dissertation Research Improvement Grant (DDRIG)](https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=505214). [Policy Design and Evaluation Lab (UC San Diego)](http://pdel.ucsd.edu), [Friends of the International Center (UC San Diego)](http://icenter.ucsd.edu/friends/), and the [Korean-American Scholarship Foundation](http://www.kasf.org),  
 
-Prior to starting the PhD program at UC San Diego, I served as an officer in the [Republic of Korea Air Force (ROKAF)](http://www.airforce.mil.kr:8081/user/indexMain.action?command=&siteId=airforce-eng) for over three years. From December 2016 to September 2017, I will be based in Nairobi, Kenya, with my wife and two little kids. 
+Prior to starting the PhD program at UC San Diego, I served as an officer in the [Republic of Korea Air Force (ROKAF)](http://www.airforce.mil.kr:8081/user/indexMain.action?command=&siteId=airforce-eng) for over three years. From December 2016 to September 2017, I am based in Nairobi, Kenya, with my wife and two little children, where I am serving as a research associate at the [Institute for Development Studies, University of Nairobi](http://ids.uonbi.ac.ke/). 
 
 
 
