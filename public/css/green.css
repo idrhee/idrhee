@@ -56,3 +56,17 @@ a:hover {
 .btn-primary.btn-outline:active {
     background-color: rgb(24,109,150);
 }
+
+/* Fonts */
+
+html {
+  font-family: 'Merriweather', serif;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
