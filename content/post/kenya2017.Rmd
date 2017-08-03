@@ -1,7 +1,12 @@
 ---
-title: 'Public Opinion Survey: Kenyan Presidential Elections'
+title: 'Opinion Polls and the Kenyan Presidential Election - 1'
 author: "Inbok Rhee"
-date: "7/31/2017"
+date: "2017-08-03"
+lastmod: 2015-12-23
+slug: "opinion-polls-and-the-kenyan-presidential-election-1"
+tags: [ "kenya", "election", "opinion polls" ]
+category:
+  - "Kenya"
 output: html_document
 ---
 
@@ -9,14 +14,15 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Intro
+
 It's five days to the election, and I've been playing a little bit with the opinion poll data for the 2017 Kenyan Elections. To the best of my abilities, I have collected the data from newspaper articles and the releases from survey firms. I've only used surveys that were at least trying to be somewhat nationally repersentative, and those which included some basic details about the surveys including the total number of respondents or the survey period. This forced me to leave out the results from pollsters like Trends and Insights For Africa (TIFA). There's also a lot of other caveats and limitations, but we can talk more about those later. Hopefully this will be the first of the series of few posts on this subject.
 
 ## Trends
+
 First things first, I've plotted the overtime trends in the polls, first by the level of supports for the two main candidates, Uhuru Kenyatta and Raila Odinga. Second, I've done the same visualization but this thime using the difference in the rates of support.
 
 
-```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=12, fig.height=8}
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
 
 library(MCMCpack)
 library(lubridate)
@@ -83,7 +89,7 @@ ggplot(melt(surveys_new, id.vars=c('dt', 'firm', 'firm1'),
 
 ```
 
-```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=12, fig.height=8}
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
 
 
 ggplot(surveys_new, aes(dt, gap)) +
@@ -105,7 +111,7 @@ ggplot(surveys_new, aes(dt, gap)) +
 
 
 
-```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=12, fig.height=8}
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
 # 5. Bayesian Prediction --------------------------------------------------
 
 

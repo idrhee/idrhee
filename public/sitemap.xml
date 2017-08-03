@@ -4,6 +4,14 @@
     
     
     <url>
+      <loc>/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</loc>
+      <lastmod>2015-12-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -20,6 +28,15 @@
     
     
     <url>
+      <loc>/tags/election/</loc>
+      <lastmod>2015-12-23T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>/</loc>
       <lastmod>2016-04-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -29,7 +46,26 @@
     
     
     <url>
-      <loc>/post/kenya2017/</loc>
+      <loc>/tags/kenya/</loc>
+      <lastmod>2015-12-23T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/tags/opinion-polls/</loc>
+      <lastmod>2015-12-23T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>/tags/</loc>
+      <priority>0</priority>
     </url>
     
   

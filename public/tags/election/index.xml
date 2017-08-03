@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Election on Inbok Rhee</title>
+    <link>/tags/election/index.xml</link>
+    <description>Recent content in Election on Inbok Rhee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Inbok Rhee</copyright>
+    <atom:link href="/tags/election/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Opinion Polls and the Kenyan Presidential Election - 1</title>
+      <link>/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</guid>
+      <description>&lt;p&gt;It’s five days to the election, and I’ve been playing a little bit with the opinion poll data for the 2017 Kenyan Elections. To the best of my abilities, I have collected the data from newspaper articles and the releases from survey firms. I’ve only used surveys that were at least trying to be somewhat nationally repersentative, and those which included some basic details about the surveys including the total number of respondents or the survey period. This forced me to leave out the results from pollsters like Trends and Insights For Africa (TIFA). There’s also a lot of other caveats and limitations, but we can talk more about those later. Hopefully this will be the first of the series of few posts on this subject.&lt;/p&gt;
+&lt;div id=&#34;trends&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Trends&lt;/h2&gt;
+&lt;p&gt;First things first, I’ve plotted the overtime trends in the polls, first by the level of supports for the two main candidates, Uhuru Kenyatta and Raila Odinga. Second, I’ve done the same visualization but this thime using the difference in the rates of support.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

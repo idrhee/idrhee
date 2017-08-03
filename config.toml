@@ -20,7 +20,7 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Inbok Rhee"
-  role = "Ph.D. Candidate"
+  role = "Ph.D. Candidate in Political Science"
   organization = "University of California, San Diego"
   organization_url = "https://polisci.ucsd.edu"
   avatar = "portrait.jpg"
@@ -29,7 +29,6 @@ defaultContentLanguageInSubdir = false
   phone = "+1 347 514 5726 (US), +254 (0)719 211 682 (Kenya)"
   github = "idrhee"
   twitter = "@inbok_rhee"
-  telegram = ""
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = ""
@@ -142,6 +141,10 @@ defaultContentLanguageInSubdir = false
     icon_pack = "fa"
     link = "//github.com/idrhee"
 
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "//linkedin.com/in/inbokrhee"
 
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
@@ -175,3 +178,7 @@ defaultContentLanguageInSubdir = false
 # Configure the English version of the website.
 [languages.en]
   languageCode = "en-us"
+
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+    
