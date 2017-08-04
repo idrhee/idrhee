@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opinion Polls on Inbok Rhee</title>
-    <link>http://inbokrhee.netlify.com/tags/opinion-polls/index.xml</link>
+    <link>/tags/opinion-polls/index.xml</link>
     <description>Recent content in Opinion Polls on Inbok Rhee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,17 +11,17 @@
     
     <item>
       <title>Opinion Polls and the Kenyan Presidential Election - 1</title>
-      <link>http://inbokrhee.netlify.com/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</link>
+      <link>/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</link>
       <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://inbokrhee.netlify.com/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</guid>
+      <guid>/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</guid>
       <description>&lt;p&gt;It’s five days to the election, and I’ve been playing a little bit with the opinion poll data for the 2017 Kenyan Elections. To the best of my abilities, I have collected the data from newspaper articles and the releases from major survey firms. I’ve only used surveys that were at least trying to be somewhat nationally repersentative, and those which included some basic details about the surveys including the total number of respondents or the survey period. This forced me to leave out the results from some pollsters like Trends and Insights For Africa (TIFA). There’s also a lot of other caveats and limitations, but we can talk more about those later.&lt;/p&gt;
 &lt;div id=&#34;trends-narrowing-the-gap&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Trends: Narrowing the Gap&lt;/h2&gt;
 &lt;p&gt;First things first, I’ve plotted the overtime trends in the polls, first by the level of supports for the two main candidates, Uhuru Kenyatta and Raila Odinga. Instead of picking the mid-date, I used all dates for which a given survey was conducted, to capture the durations for each surveys. To better capture the overall time trends, I fitted a lowess line for the two leading candidates. The resulting graph below shows how the gap between the two candidates closed down as we get closer to the elections.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2017_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The next graph contains the same information, but this thime using the difference in the rates of support. Again, here we can see that the gap is quickly coming down close to zero as we are getting close to the August 8th.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2017_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;simple-bayesian-prediction-model&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Simple Bayesian Prediction Model&lt;/h2&gt;
@@ -57,7 +57,7 @@
 &lt;li&gt;Get &lt;span class=&#34;math inline&#34;&gt;\(\theta_p - \theta_j\)&lt;/span&gt; distribution and mean of that distribution.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The resulting distribution of the mean is plotted below. The mean of means retrieved is approximately 8.2% difference between Uhuru and Raila, with the 1st and 3rd quantiles being approximately 7.9% and 8.4% respectively.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2017_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;caveats&#34; class=&#34;section level2&#34;&gt;
