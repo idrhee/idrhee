@@ -4,7 +4,7 @@
     
     
     <url>
-      <loc>http://inbokrhee.netlify.com/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</loc>
+      <loc>/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</loc>
       <lastmod>2015-12-23T00:00:00+00:00</lastmod>
     </url>
     
@@ -12,7 +12,7 @@
     
     
     <url>
-      <loc>http://inbokrhee.netlify.com/tags/academic/</loc>
+      <loc>/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -20,7 +20,7 @@
     
     
     <url>
-      <loc>http://inbokrhee.netlify.com/post/</loc>
+      <loc>/post/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -28,15 +28,7 @@
     
     
     <url>
-      <loc>http://inbokrhee.netlify.com/categories/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>http://inbokrhee.netlify.com/tags/election/</loc>
+      <loc>/tags/election/</loc>
       <lastmod>2015-12-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -45,7 +37,7 @@
     
     
     <url>
-      <loc>http://inbokrhee.netlify.com/</loc>
+      <loc>/</loc>
       <lastmod>2016-04-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -54,7 +46,7 @@
     
     
     <url>
-      <loc>http://inbokrhee.netlify.com/tags/kenya/</loc>
+      <loc>/tags/kenya/</loc>
       <lastmod>2015-12-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -63,7 +55,7 @@
     
     
     <url>
-      <loc>http://inbokrhee.netlify.com/tags/opinion-polls/</loc>
+      <loc>/tags/opinion-polls/</loc>
       <lastmod>2015-12-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -72,16 +64,7 @@
     
     
     <url>
-      <loc>http://inbokrhee.netlify.com/publication_types/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>http://inbokrhee.netlify.com/tags/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <loc>/tags/</loc>
       <priority>0</priority>
     </url>
     
