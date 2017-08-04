@@ -28,6 +28,14 @@
     
     
     <url>
+      <loc>http://inbokrhee.netlify.com/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://inbokrhee.netlify.com/tags/election/</loc>
       <lastmod>2015-12-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -64,7 +72,16 @@
     
     
     <url>
+      <loc>http://inbokrhee.netlify.com/publication_types/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://inbokrhee.netlify.com/tags/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
