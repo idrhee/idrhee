@@ -141,7 +141,7 @@ ggplot(surveys_new, aes(dt, gap)) +
 
 ## Survey Firms
 
-So how well did the polls perform in terms of how accurately they predicted the actual election return? While there must be better ways to go about answering this question, by technical capabilities are quite limited. So, as a crude measure, I calculated the eucleadian distance between the polling data closest to the election and the actual election results for all survey firms in the data. I excluded Synovate Research Reinvented, since their data (captured by Wikipedia) only provided information for the two leading candidates and their last survey was conducted in 2011, more than a year and a half prior to the election date. The resulting graph below shows that, among the four firms, IPSOS came closest to the actual results, followed by InfoTrak, Strategic Research, and Smart Octopus. Smart Octopus, in particular, seems to have been way off, compared to the other firms.
+So how well did the polls perform in terms of how accurately they predicted the actual election return? While there must be better ways to go about answering this question, by technical capabilities are quite limited. So, as a crude measure, I calculated the euclidian distance between the polling data closest to the election and the actual election results for all survey firms in the data. I excluded Synovate Research Reinvented, since their data (captured by Wikipedia) only provided information for the two leading candidates and their last survey was conducted in 2011, more than a year and a half prior to the election date. The resulting graph below shows that, among the four firms, IPSOS came closest to the actual results, followed by InfoTrak, Strategic Research, and Smart Octopus. Smart Octopus, in particular, seems to have been way off, compared to the other firms.
 
 
 ```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
@@ -166,11 +166,11 @@ ggplot(final.polls, aes(euclidian, Pollster[order(final.polls$euclidian)])) +
        x = "Euclidian Distance", y = "Survey Firms") 
 ```
 
-Next, I ran a very simple linear regression model where the dependent variable is the real gap between Uhuru and Raila support during the elections, and the independent variables included a catetorical variable capturing which firm conducted the survey, and a numerical variable capturing the temporal distance to the election. For the categorical Polling Firm variable, I used IPSOS as the baseline category. The resulting model reads:
+Next, I ran a very simple linear regression model where the dependent variable is the real gap between Uhuru and Raila support during the elections, and the independent variables included a categorical variable capturing which firm conducted the survey, and a numerical variable capturing the temporal distance to the election. For the categorical Polling Firm variable, I used IPSOS as the baseline category. The resulting model reads:
 
 $$Gap = 8.27 + 5.12*InfoTrak -15.49*SmartOctopus -0.79*StrategicResearch +5.08*SynovateResearch+0.02DaysUntilElection$$
 
-This shows that compared to IPSOS, the reference group, both InfoTrak and Synovate Research underestiamted, while Strategic Research and Smart Octopus overestimated the Uhuru lead. The coefficient for days, while not apparent in the graph, is small (0.024) but positive and sigfinicant, which shows that the further away from the elections, the Uhuru lead was underestiamted. Well, nothing really new or were not already clear from the time trends graph. 
+This shows that compared to IPSOS, the reference group, both InfoTrak and Synovate Research underestimated, while Strategic Research and Smart Octopus overestimated the Uhuru lead. The coefficient for days, while not apparent in the graph, is small (0.024) but positive and significant, which shows that the further away from the elections, the Uhuru lead was underestimated. Well, nothing really new or were not already clear from the time trends graph. 
 
 
 ```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
@@ -191,11 +191,11 @@ coefplot(m1, decreasing = TRUE, sort = "magnitude", color="black",
 
 ```
 
-Finally, following [Jackman (2006)](http://www.tandfonline.com/doi/abs/10.1080/10361140500302472), I tried to model the latent voting intention and measuring polling house effect using a more sophisticated Bayesian model. However, my knowledge and abilities for this type of modelling is severely limited. So instead, I borrowed R and Stan codes from the analysis done by statistician Peter Ellis on the Australian elections replicating the original study by Jackman (posts [here](http://ellisp.github.io/blog/2017/06/24/oz-polls-statespace) and [here](http://ellisp.github.io/blog/2017/07/09/oz-polls-revisited)). Since only IPSOS and Infotrak had more than one or two data points, I only used the results from these two firms for the analysis. The overall trends with the predictions and the confidence intervals are depicted in the first graph. As before, we see the support for the two candidates narrowing down as we approached the elections, and competing within a converging margin of error.
+Finally, following [Jackman (2006)](http://www.tandfonline.com/doi/abs/10.1080/10361140500302472), I tried to model the latent voting intention and measuring polling house effect using a more sophisticated Bayesian model. However, my knowledge and abilities for this type of modeling are severely limited. So instead, I borrowed R and Stan codes from the analysis done by statistician Peter Ellis on the Australian elections replicating the original study by Jackman (posts [here](http://ellisp.github.io/blog/2017/06/24/oz-polls-statespace) and [here](http://ellisp.github.io/blog/2017/07/09/oz-polls-revisited)). Since only IPSOS and Infotrak had more than one or two data points, I only used the results from these two firms for the analysis. The overall trends with the predictions and the confidence intervals are depicted in the first graph. As before, we see the support for the two candidates narrowing down as we approached the elections, and competing within a converging margin of error.
 
 <img src="file_show.pdf" alt="some text"  width="4200" height="4200">
 
-Now to the house effects. As you can see below, unfortunately, there's simply not enough data points to estimate the house effects. We see than while IPSOS underestimated the support for the both candidates, Infotrak underestimated Uhuru support and overestimated Raila support. But every single one of the confidence intervals are wide and cross zero, so cannot really say much about anything.
+Now to the house effects. As you can see below, unfortunately, there's simply not enough data points to estimate the house effects. We see that while IPSOS underestimated the support for the both candidates, Infotrak underestimated Uhuru support and overestimated Raila support. But every single one of the confidence intervals is wide and cross zero, so cannot really say much about anything.
 
 <img src="file_show1.pdf" alt="some text"  width="4200" height="4200">
 
