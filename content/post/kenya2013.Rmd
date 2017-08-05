@@ -3,7 +3,7 @@ title: 'Opinion Polls and the Kenyan Presidential Election - 2'
 author: "Inbok Rhee"
 date: "2017-08-05"
 lastmod: 2015-12-23
-slug: "opinion-polls-and-the-kenyan-presidential-election-1"
+slug: "opinion-polls-and-the-kenyan-presidential-election-2"
 tags: [ "kenya", "election", "opinion polls" ]
 category:
   - "Kenya"
@@ -193,11 +193,11 @@ coefplot(m1, decreasing = TRUE, sort = "magnitude", color="black",
 
 Finally, following [Jackman (2006)](http://www.tandfonline.com/doi/abs/10.1080/10361140500302472), I tried to model the latent voting intention and measuring polling house effect using a more sophisticated Bayesian model. However, my knowledge and abilities for this type of modeling are severely limited. So instead, I borrowed R and Stan codes from the analysis done by statistician Peter Ellis on the Australian elections replicating the original study by Jackman (posts [here](http://ellisp.github.io/blog/2017/06/24/oz-polls-statespace) and [here](http://ellisp.github.io/blog/2017/07/09/oz-polls-revisited)). Since only IPSOS and Infotrak had more than one or two data points, I only used the results from these two firms for the analysis. The overall trends with the predictions and the confidence intervals are depicted in the first graph. As before, we see the support for the two candidates narrowing down as we approached the elections, and competing within a converging margin of error.
 
-<img src="/post/kenya2013_files/file_show.pdf" alt="some text"  width="4200" height="4200">
+<img src="/post/kenya2013_files/figure-html/file_show.pdf" alt="some text"  width="4200" height="4200">
 
 Now to the house effects. As you can see below, unfortunately, there's simply not enough data points to estimate the house effects. We see that while IPSOS underestimated the support for the both candidates, Infotrak underestimated Uhuru support and overestimated Raila support. But every single one of the confidence intervals is wide and cross zero, so cannot really say much about anything.
 
-<img src="/post/kenya2013_files/file_show1.pdf" alt="some text"  width="4200" height="4200">
+<img src="/post/kenya2013_files/figure-html/file_show1.pdf" alt="some text"  width="4200" height="4200">
 
 
 ## Simple Bayesian Prediction Model
