@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Election on Inbok Rhee</title>
-    <link>/tags/election/</link>
+    <link>http://inbokrhee.netlify.com/tags/election/</link>
     <description>Recent content in Election on Inbok Rhee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,52 +12,52 @@
     
     <item>
       <title>Opinion Polls and the Kenyan Presidential Election - 2</title>
-      <link>/2017/08/05/opinion-polls-and-the-kenyan-presidential-election-2/</link>
+      <link>http://inbokrhee.netlify.com/_#post/opinion-polls-and-the-kenyan-presidential-election-2/</link>
       <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/08/05/opinion-polls-and-the-kenyan-presidential-election-2/</guid>
+      <guid>http://inbokrhee.netlify.com/_#post/opinion-polls-and-the-kenyan-presidential-election-2/</guid>
       <description>&lt;p&gt;Continuing with the series, I took a look at the 2013 opinion polls and tried to compare it to the actual election returns. All data come from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Kenyan_general_election,_2013#Opinion_polls&#34;&gt;Wikipedia page on the 2013 elections&lt;/a&gt;. As before, I used only the data points which at least provided the sample size and the survey duration.&lt;/p&gt;
 &lt;div id=&#34;trends&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Trends&lt;/h2&gt;
 &lt;p&gt;As before, I start with the overall time trends. The overtime plot shows Uhuru rapidly narrowing the gap with Raila. On the election day, Uhuru performed much better than any of the polls suggested, and Raila did much worse than what the polling data trend showed.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2013_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The next graph shows the difference in the rates of support. Again, here we can see that the gap is quickly coming down close to zero as the election date approached. However, on the election date, Uhuru won by 6.81 % margin over Raila.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2013_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;survey-firms&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Survey Firms&lt;/h2&gt;
 &lt;p&gt;So how well did the polls perform in terms of how accurately they predicted the actual election return? While there must be better ways to go about answering this question, by technical capabilities are quite limited. So, as a crude measure, I calculated the euclidian distance between the polling data closest to the election and the actual election results for all survey firms in the data. I excluded Synovate Research Reinvented, since their data (captured by Wikipedia) only provided information for the two leading candidates and their last survey was conducted in 2011, more than a year and a half prior to the election date. The resulting graph below shows that, among the four firms, IPSOS came closest to the actual results, followed by InfoTrak, Strategic Research, and Smart Octopus. Smart Octopus, in particular, seems to have been way off, compared to the other firms.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2013_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Next, I ran a very simple linear regression model where the dependent variable is the real gap between Uhuru and Raila support during the elections, and the independent variables included a categorical variable capturing which firm conducted the survey, and a numerical variable capturing the temporal distance to the election. For the categorical Polling Firm variable, I used IPSOS as the baseline category. The resulting model reads:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[Gap = 8.27 + 5.12*InfoTrak -15.49*SmartOctopus -0.79*StrategicResearch +5.08*SynovateResearch+0.02DaysUntilElection\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;This shows that compared to IPSOS, the reference group, both InfoTrak and Synovate Research underestimated, while Strategic Research and Smart Octopus overestimated the Uhuru lead. The coefficient for days, while not apparent in the graph, is small (0.024) but positive and significant, which shows that the further away from the elections, the Uhuru lead was underestimated. Well, nothing really new or were not already clear from the time trends graph.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2013_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Finally, following &lt;a href=&#34;http://www.tandfonline.com/doi/abs/10.1080/10361140500302472&#34;&gt;Jackman (2006)&lt;/a&gt;, I tried to model the latent voting intention and measuring polling house effect using a more sophisticated Bayesian model. However, my knowledge and abilities for this type of modeling are severely limited. So instead, I borrowed R and Stan codes from the analysis done by statistician Peter Ellis on the Australian elections replicating the original study by Jackman (posts &lt;a href=&#34;http://ellisp.github.io/blog/2017/06/24/oz-polls-statespace&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://ellisp.github.io/blog/2017/07/09/oz-polls-revisited&#34;&gt;here&lt;/a&gt;). Since only IPSOS and Infotrak had more than one or two data points, I only used the results from these two firms for the analysis. The overall trends with the predictions and the confidence intervals are depicted in the first graph. As before, we see the support for the two candidates narrowing down as we approached the elections, and competing within a converging margin of error.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/file_show.pdf&#34; alt=&#34;some text&#34;  width=&#34;4200&#34; height=&#34;4200&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2013_files/figure-html/file_show.pdf&#34; alt=&#34;some text&#34;  width=&#34;4200&#34; height=&#34;4200&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Now to the house effects. As you can see below, unfortunately, there’s simply not enough data points to estimate the house effects. We see that while IPSOS underestimated the support for the both candidates, Infotrak underestimated Uhuru support and overestimated Raila support. But every single one of the confidence intervals is wide and cross zero, so cannot really say much about anything.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/file_show1.pdf&#34; alt=&#34;some text&#34;  width=&#34;4200&#34; height=&#34;4200&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2013_files/figure-html/file_show1.pdf&#34; alt=&#34;some text&#34;  width=&#34;4200&#34; height=&#34;4200&#34;&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;simple-bayesian-prediction-model&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Simple Bayesian Prediction Model&lt;/h2&gt;
 &lt;p&gt;Finally, as before, I conducted the same simple Bayesian Prediction Model with sequential learning as I did for the 2017 data. The resulting distribution of the mean is plotted below. The mean of means retrieved is approximately -6.27% difference between Uhuru and Raila, with the 1st and 3rd quartiles being -6.30% and -6.23%. So this model predicts that instead of winning by 6.81% margin, Kenyatta would lose by 6.2% if the elections were held on Feb 26, 2013. That’s off by 13%! Well, what can I say. I’ve learnt a fair bit about programming and things that I don’t know. More exercises to follow..&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2013_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Opinion Polls and the Kenyan Presidential Election - 1</title>
-      <link>/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</link>
+      <link>http://inbokrhee.netlify.com/_#post/opinion-polls-and-the-kenyan-presidential-election-1/</link>
       <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/08/03/opinion-polls-and-the-kenyan-presidential-election-1/</guid>
+      <guid>http://inbokrhee.netlify.com/_#post/opinion-polls-and-the-kenyan-presidential-election-1/</guid>
       <description>&lt;p&gt;It’s five days to the election, and I’ve been playing a little bit with the opinion poll data for the 2017 Kenyan Elections. To the best of my abilities, I have collected the data from newspaper articles and the releases from major survey firms. I’ve only used surveys that were at least trying to be somewhat nationally representative, and those which included some basic details about the surveys including the total number of respondents or the survey period. This forced me to leave out the results from some pollsters like Trends and Insights For Africa (TIFA). There’s also a lot of other caveats and limitations, but we can talk more about those later.&lt;/p&gt;
 &lt;div id=&#34;trends-narrowing-the-gap&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Trends: Narrowing the Gap&lt;/h2&gt;
 &lt;p&gt;First things first, I’ve plotted the overtime trends in the polls, first by the level of supports for the two main candidates, Uhuru Kenyatta and Raila Odinga. Instead of picking the mid-date, I used all dates for which a given survey was conducted, to capture the durations for each survey. To better capture the overall time trends, I fitted a lowess line for the two leading candidates. The resulting graph below shows how the gap between the two candidates closed down as we get closer to the elections.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2017_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The next graph contains the same information, but this time using the difference in the rates of support. Again, here we can see that the gap is quickly coming down close to zero as we are getting close to the August 8th.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2017_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;simple-bayesian-prediction-model&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Simple Bayesian Prediction Model&lt;/h2&gt;
@@ -93,7 +93,7 @@
 &lt;li&gt;Get &lt;span class=&#34;math inline&#34;&gt;\(\theta_p - \theta_j\)&lt;/span&gt; distribution and mean of that distribution.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The resulting distribution of the mean is plotted below. The mean of means retrieved is approximately 8.2% difference between Uhuru and Raila, with the 1st and 3rd quantiles being approximately 7.9% and 8.4% respectively.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://inbokrhee.netlify.com/post/kenya2017_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;caveats&#34; class=&#34;section level2&#34;&gt;
