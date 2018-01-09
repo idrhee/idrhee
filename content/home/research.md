@@ -13,12 +13,12 @@ widget = "custom"
 weight = 20
 
 +++
-Dissertation
+**Dissertation**
 
 Title: Legislator A ention and Democratic Development in Kenya
 Committee: [Karen Ferree](https://polisci.ucsd.edu/about-our-people/faculty/faculty-directory/currently-active-faculty/ferree-profile.html) (Co-Chair), [Clark Gibson](http://pages.ucsd.edu/~ccgibson/) (Co-Chair), [Scott Desposato](http://www.desposato.org), [Stephan Haggard](http://gps.ucsd.edu/faculty-directory/stephan-haggard.html), and [Molly Roberts](http://www.margaretroberts.net)
 
-Papers & Presentations
+**Papers & Presentations**
 
 - “Subjective-To-Subjective Link in Economic Voting: Using Afrobarometer Data.” Under Review. *Presented at the Annual Western Political Science Association (WPSA) Conference. March 2016.*
 - “Diversity, Institutions, and Politics: Explaining the Distribution of Public Services in South Africa.” with John Porten and [Clark Gibson](http://pages.ucsd.edu/~ccgibson/). Working Paper. Invited for Journal Submission.
@@ -28,7 +28,7 @@ Papers & Presentations
 - “Analyzing Voter Preference for Representation Style Using Afrobarometer Data.” Work in Progress.
 - “The Role of Peacekeeping Operations in Electoral Processes.” with Marie Doucey, Sara Jacobs, and Aaron Pangburn. Published (Non peer-reviewed policy paper). *Policy Report for Policy and Best Practices Service (PBPS), Department of Peacekeeping Operations (DPKO), United Nations. May 2012.*
 
-Other Writings
+**Other Writings**
 
 - "[Park Geun-hye Unraveling](https://piie.com/blogs/north-korea-witness-transformation)" series (I - X) and other policy writings on the Korean Peninsula with [Stephan Haggard](http://gps.ucsd.edu/faculty-directory/stephan-haggard.html) and Jaesung Ryu, [North Korea: Withness to Transformation](https://piie.com/blogs/north-korea-witness-transformation), Nov 2016 - Mar 2017
 
