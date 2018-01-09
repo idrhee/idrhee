@@ -1,11 +1,11 @@
 +++
 date = "2017-01-01T00:00:00"
-title = "Example Talk"
+title = "POLI 11: Introduction to Comparative Politics"
 abstract = ""
 abstract_short = ""
-event = "Hugo Academic Theme Conference"
-event_url = "https://example.org"
-location = "London, United Kingdom"
+#event = "Hugo Academic Theme Conference"
+#event_url = "https://example.org"
+location = "SEQUO 147"
 
 selected = false
 math = true
@@ -15,9 +15,9 @@ url_slides = ""
 url_video = ""
 
 # Optional featured image (relative to `static/img/` folder).
-[header]
-image = "headers/bubbles-wide.jpg"
-caption = "My caption :smile:"
+#[header]
+#image = "headers/bubbles-wide.jpg"
+#caption = "My caption :smile:"
 
 +++
 
