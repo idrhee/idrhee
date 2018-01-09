@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Inbok Rhee</title>
+    <link>/project/index.xml</link>
+    <description>Recent content in Projects on Inbok Rhee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Inbok Rhee</copyright>
+    <lastBuildDate>Tue, 09 Jan 2018 11:37:28 -0800</lastBuildDate>
+    <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>poli11_winter_2017</title>
+      <link>/project/poli11_winter_2017/</link>
+      <pubDate>Tue, 09 Jan 2018 11:37:28 -0800</pubDate>
+      
+      <guid>/project/poli11_winter_2017/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
