@@ -47,7 +47,7 @@ My research has been supported by the [Fulbright-Hays Doctoral Dissertation Rese
 
 I received a MA in Political Science (2014) from [UC San Diego in Political Science](http://polisci.ucsd.edu/), a MA in International Affairs (2012) from the [School of International & Public Affairs (SIPA), Columbia University](https://sipa.columbia.edu), and a BA in Politics and Development Studies (2006)from the [School of Oriental and African Studies (SOAS), University of London](https://www.soas.ac.uk). Prior to starting the PhD program at UC San Diego, I served as an officer in the [Republic of Korea Air Force (ROKAF)](http://www.airforce.mil.kr:8081/user/indexMain.action?command=&siteId=airforce-eng) for over three years, and was awarded the Meritorious Service Medal.  
 
-From December 2016 to September 2017, I was based in Nairobi, Kenya, where I am served as a research associate at the [Institute for Development Studies (IDS), University of Nairobi (UoN)](http://ids.uonbi.ac.ke/). This quarter (Winter 2018), I am searving as a section instructor for POLI 11 Introduction to Comparative Politics and as a graduate student mentor for POLI 198RA Research Apprenticeship.
+From December 2016 to September 2017, I was based in Nairobi, Kenya, where I am served as a research associate at the [Institute for Development Studies (IDS), University of Nairobi (UoN)](http://ids.uonbi.ac.ke/). 
 
 
 

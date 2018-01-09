@@ -19,7 +19,6 @@ weight = 60
 - Section Instructor. <a href="http://www.inbokrhee.com/oldpost/poli11_winter2018/" target="_self">POLI11 Introduction to Comparative Politics</a> (Professor Karen Ferree)
 - Graduate Student Mentor. [POLI198RA Research Apprenticeship](https://polisci.ucsd.edu/undergrad/research-apprenticeship/index.html)
 
-## Previous Years
 
 
 
