@@ -18,6 +18,8 @@ weight = 60
 
 I am a teaching instructor for the following courses at University X:
 
+[Poli11]({{< ref "oldpost/poli11_winter2018.md" >}})
+
 - CS101: An intro to computer science
 - CS102: An intro to computer science
 - CS103: An intro to computer science
