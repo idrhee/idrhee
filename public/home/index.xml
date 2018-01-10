@@ -8,49 +8,7 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Inbok Rhee</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title></title>
-      <link>/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/about/</guid>
-      <description>I am a PhD Candidate at the Department of Political Science, University of California, San Diego. My research focuses on legislative and democratic development in Sub-Saharan Africa. My dissertation investigates the logic of legislator attention in developing democracies and examines when and how some politicians are able to focus more on national policy-making than being mere constituency servants. To answer these questions, I have been conducting extensive fieldwork in Kenya, developing an original dataset on politicians’ career background, conducting qualitative interviews with Kenyan voters and politicians, and analyzing tens of thousands of parliamentary speech texts as data.</description>
-    </item>
-    
-    <item>
-      <title>Research</title>
-      <link>/home/research/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/research/</guid>
-      <description>Dissertation
-Title: Legislator A ention and Democratic Development in Kenya Committee: Karen Ferree (Co-Chair), Clark Gibson (Co-Chair), Scott Desposato, Stephan Haggard, and Molly Roberts
-Papers &amp;amp; Presentations
- “Subjective-To-Subjective Link in Economic Voting: Using Afrobarometer Data.” Under Review. Presented at the Annual Western Political Science Association (WPSA) Conference. March 2016. “Diversity, Institutions, and Politics: Explaining the Distribution of Public Services in South Africa.” with John Porten and Clark Gibson. Working Paper.</description>
-    </item>
-    
-    <item>
-      <title>Teaching</title>
-      <link>/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/teaching/</guid>
-      <description>Winter 2018
- Section Instructor. POLI11 Introduction to Comparative Politics (Professor Karen Ferree) Graduate Student Mentor. POLI198RA Research Apprenticeship  </description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/contact/</guid>
-      <description></description>
-    </item>
+    <atom:link href="/home/" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
