@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\nlibrary(readstata13)\ndd <- read.dta13(\"/Users/idrhee/Dropbox/shared/GSR_ILAR/Data/2_dyadic/0_raw/CEPII_Trade/TRADHIST_WP.dta\")\ndd <- dd[dd$year >=1990,]\ntable(dd$SOURCE_TF)\n\n(40454)/(14361+726755+40454+545+3+1)*100\nlibrary(dplyr)\ndd %>% filter(SOURCE_TF==\"MITC_XP\") %>% group_by(iso_o) %>% count(iso_o, iso_d) %>% print(n=200)\n\n",
+    "created" : 1506464401447.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3452245115",
+    "id" : "F57291DB",
+    "lastKnownWriteTime" : 7023755453045669894,
+    "last_content_update" : 1506465233768,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

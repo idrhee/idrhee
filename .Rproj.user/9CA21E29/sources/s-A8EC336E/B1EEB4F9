@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1514234706887.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B1EEB4F9",
+    "lastKnownWriteTime" : 1515527552,
+    "last_content_update" : 1515527552,
+    "path" : "~/Dropbox/_doc/_archive/other/idrhee/blogdown_serve.R",
+    "project_path" : "blogdown_serve.R",
+    "properties" : {
+        "cursorPosition" : "5,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
