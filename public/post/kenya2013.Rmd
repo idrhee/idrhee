@@ -1,0 +1,279 @@
+---
+title: 'Opinion Polls and the Kenyan Presidential Election - 2'
+author: "Inbok Rhee"
+date: "2017-08-05"
+lastmod: 2015-12-23
+slug: "opinion-polls-and-the-kenyan-presidential-election-2"
+tags: [ "kenya", "election", "opinion polls" ]
+category:
+  - "Kenya"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Continuing with the series, I took a look at the 2013 opinion polls and tried to compare it to the actual election returns. All data come from the [Wikipedia page on the 2013 elections](https://en.wikipedia.org/wiki/Kenyan_general_election,_2013#Opinion_polls). As before, I used only the data points which at least provided the sample size and the survey duration.
+
+## Trends
+
+As before, I start with the overall time trends. The overtime plot shows Uhuru rapidly narrowing the gap with Raila. On the election day, Uhuru performed much better than any of the polls suggested, and Raila did much worse than what the polling data trend showed. 
+
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
+
+
+library(MCMCpack)
+library(lubridate)
+library(reshape2)
+library(extrafont)
+library(ggplot2)
+library(rvest)
+library(ggthemes)
+library(ggrepel)
+
+# 1. Get Data --------------------------------------------------------------
+
+
+# 2. Overtime Plot --------------------------------------------------------
+
+surveys <- read.csv("/Users/idrhee/Dropbox/_doc/_archive/2017-2018/opinion_polls/2014_Seoul_Mayoral_Election_Analysis-master/polls2013s.csv")
+
+surveys <- surveys[!is.na(surveys$Sample),]
+#surveys <- surveys[which(!grepl("synovate", surveys$Pollster, ignore.case = T)),]
+surveys$Pollster <- as.character(surveys$Pollster)
+
+surveys$Pollster[surveys$Pollster=="Synovate Research Reinvented"] <- "Synovate Research"
+
+surveys$Pollster <- as.factor(surveys$Pollster)
+
+
+surveys$sample <- surveys$Sample/surveys$days
+
+surveys$day <- as.character(surveys$day)
+
+surveys_new <- within(surveys, {
+  N   <- sample*(Kenyatta+Odinga)/100 #- sample * Others /100 - sample*(Mudavadi + Kenneth + Others) /100
+  N_j <- N * Kenyatta /100
+  N_p <- N * Odinga /100
+  dt  <- ymd(day)
+})
+# surveys_new <- surveys_new[surveys_new$dt >= as.Date("2012-03-04"),]
+# surveys_new <- surveys_new[surveys_new$dt >= as.Date("2013-01-01"),]
+surveys_new <- surveys_new[!is.na(surveys_new$Pollster),]
+#EDA 
+
+
+surveys_new$dminus <- as.Date("2013-03-04")- as.Date(surveys_new$day, "%Y%m%d")
+surveys_new$gap <- surveys_new$Kenyatta-surveys_new$Odinga
+
+surveys_new$ggap <- (50.51 - 43.7) - surveys_new$gap
+surveys_new <- within(surveys_new, Pollster <- relevel(Pollster, ref = "IPSOS"))
+
+results  <- data.frame(dt=c("2013-3-4", "2013-3-4"),
+                       variable=c("Kenyatta", "Odinga"),
+                       value=c(50.51, 43.7))
+results$dt <- as.Date(results$dt)
+
+library(RColorBrewer)
+j_brew_colors <- brewer.pal(n = 8, name = "Set1")
+
+library(scales)
+
+ggplot(melt(surveys_new, id.vars=c('dt', 'Pollster'), 
+            measure.vars =c('Kenyatta', 'Odinga')), aes(dt, value)) + 
+  geom_point(aes(shape=Pollster, color = variable), alpha = 0.5, size=2) + 
+  stat_smooth(aes(colour=variable), method = "loess") + 
+  scale_y_continuous("Support (%)") + 
+  scale_x_date(date_breaks = "1 month",  
+               limits=as.Date(c("2011-07-15", "2013-05-01")),
+               labels = date_format("%Y-%m")) +  
+  theme_few() +
+  labs(title = "2013 Presidential Candidate Support",
+       subtitle = "(Lowess fitting)",
+       caption = "Source: https://en.wikipedia.org/wiki/Kenyan_general_election,_2013#Opinion_polls", 
+       x = "Date", y = "Support (%)") +
+
+  scale_shape_discrete(solid=F, name  ="Polling Firms",
+                       breaks=c("IPSOS", "Infotrak", "Strategic Research", "Smart Octopus", "Synovate Research"),
+                       labels=c("IPSOS", "InfoTrak", "Strategic Research", "Smart Octopus", "Synovate Research")) + 
+  scale_color_manual(name  ="Candidates",
+                     breaks=c("Kenyatta", "Odinga"),
+                     labels=c("Kenyatta", "Odinga"),
+                     values = c(j_brew_colors[1], j_brew_colors[5])) +
+  theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust=1)) +
+  geom_point(data=results, shape=4, size=3, 
+             color=c(j_brew_colors[1], j_brew_colors[5])) +
+  geom_label_repel(data=results, 
+                   label=c("Election Day \n Uhuru: 50.51%",
+                           "Election Day \n Raila: 43.70%"), 
+                   fill=c(j_brew_colors[1], j_brew_colors[5]), 
+                   color = 'white', nudge_x=10,
+                   size=2.5)
+```
+
+The next graph shows the difference in the rates of support. Again, here we can see that the gap is quickly coming down close to zero as the election date approached. However, on the election date, Uhuru won by 6.81 % margin over Raila.
+
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
+
+ggplot(surveys_new, aes(dt, gap)) +
+  geom_point(aes(shape=Pollster), alpha = 0.5, size=2) +
+  stat_smooth(method = "loess") +
+  scale_x_date(date_breaks = "1 month", 
+               limits=as.Date(c("2011-07-15", "2013-03-15")),
+               labels = date_format("%Y-%m")) +
+  theme_few() +
+  labs(title = "2013 Presidential Candidate Support",
+       subtitle = "Uhuru Rupport - Raila Support (Lowess fitting)",
+       caption = "Source: https://en.wikipedia.org/wiki/Kenyan_general_election,_2013#Opinion_polls", 
+       x = "Date", y = "Uhuru Support - Raila Support(%)") +
+  scale_shape_discrete(name  ="Polling Firms",
+                       breaks=c("IPSOS", "Infotrak", "Strategic Research", "Smart Octopus", "Synovate Research"),
+                       labels=c("IPSOS", "InfoTrak", "Strategic Research", "Smart Octopus", "Synovate Research")) +
+  theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust=1)) +
+  geom_point(data=data.frame(dt=as.Date("2013-03-04"), gap=50.51-43.70), color="blue", shape=4, size=3) +
+  geom_label_repel(data=data.frame(dt=as.Date("2013-03-04"), gap=50.51-43.70), 
+            label="Election Day \n Uhuru - Raila = 6.81 %", fill="blue", color = 'white', nudge_x=10,
+            size=3)
+```
+
+## Survey Firms
+
+So how well did the polls perform in terms of how accurately they predicted the actual election return? While there must be better ways to go about answering this question, by technical capabilities are quite limited. So, as a crude measure, I calculated the euclidian distance between the polling data closest to the election and the actual election results for all survey firms in the data. I excluded Synovate Research Reinvented, since their data (captured by Wikipedia) only provided information for the two leading candidates and their last survey was conducted in 2011, more than a year and a half prior to the election date. The resulting graph below shows that, among the four firms, IPSOS came closest to the actual results, followed by InfoTrak, Strategic Research, and Smart Octopus. Smart Octopus, in particular, seems to have been way off, compared to the other firms.
+
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
+# 2. Distance on Last Survey ----------------------------------------------
+
+##Replace the weekly value for GEA ISA with the last daily tracking poll
+rownames(surveys_new) <- 1:nrow(surveys_new)
+final.polls <- surveys_new[c(3, 8, 12, 34),]
+final.result <- c(50.51, 43.7, 3.96, 0.60, 1.23)
+
+final.polls$euclidian <- apply(final.polls[,6:10], 1 , function(x) sqrt(sum((x - final.result)^2)))
+##Order the polls
+final.polls <- final.polls[order(final.polls$euclidian),]
+
+final.polls$Pollster <- factor(final.polls$Pollster, levels = final.polls$Pollster[order(final.polls$euclidian)])
+
+ggplot(final.polls, aes(euclidian, Pollster[order(final.polls$euclidian)])) +
+  geom_point() +
+  labs(title = "2013 Presidential Candidate Support Prediction by Survey Firms",
+       subtitle = "Euclidian Distance Between Final Survey Result and Actual Vote Return",
+       caption = "Source: https://en.wikipedia.org/wiki/Kenyan_general_election,_2013#Opinion_polls", 
+       x = "Euclidian Distance", y = "Survey Firms") 
+```
+
+Next, I ran a very simple linear regression model where the dependent variable is the real gap between Uhuru and Raila support during the elections, and the independent variables included a categorical variable capturing which firm conducted the survey, and a numerical variable capturing the temporal distance to the election. For the categorical Polling Firm variable, I used IPSOS as the baseline category. The resulting model reads:
+
+$$Gap = 8.27 + 5.12*InfoTrak -15.49*SmartOctopus -0.79*StrategicResearch +5.08*SynovateResearch+0.02DaysUntilElection$$
+
+This shows that compared to IPSOS, the reference group, both InfoTrak and Synovate Research underestimated, while Strategic Research and Smart Octopus overestimated the Uhuru lead. The coefficient for days, while not apparent in the graph, is small (0.024) but positive and significant, which shows that the further away from the elections, the Uhuru lead was underestimated. Well, nothing really new or were not already clear from the time trends graph. 
+
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
+# 4. Regression Result ----------------------------------------------------
+surveys_new$dminus1 <- as.numeric(surveys_new$dminus)
+m1 <- lm(ggap ~ Pollster + dminus1, data=surveys_new)
+library(coefplot)
+coefplot(m1, decreasing = TRUE, sort = "magnitude", color="black",
+         newNames=c(dminus1="Days", 
+                    "PollsterInfotrak"="InfoTrak",
+                    "PollsterStrategic Research"= "Strategic Research",
+                    "PollsterSmart Octopus"= "Smart Octopus", 
+                    "PollsterSynovate Research" = "Synovate Research")) +  theme_bw() +
+  labs(title = "2013 Presidential Candidate Support Prediction by Survey Firms",
+       subtitle = "Regression Results (DV: Gap from Final Results, Base Category: IPSOS)",
+       caption = "Source: https://en.wikipedia.org/wiki/Kenyan_general_election,_2013#Opinion_polls", 
+       x = "Regression Coefficients", y = "Variables") 
+
+```
+
+Finally, following [Jackman (2006)](http://www.tandfonline.com/doi/abs/10.1080/10361140500302472), I tried to model the latent voting intention and measuring polling house effect using a more sophisticated Bayesian model. However, my knowledge and abilities for this type of modeling are severely limited. So instead, I borrowed R and Stan codes from the analysis done by statistician Peter Ellis on the Australian elections replicating the original study by Jackman (posts [here](http://ellisp.github.io/blog/2017/06/24/oz-polls-statespace) and [here](http://ellisp.github.io/blog/2017/07/09/oz-polls-revisited)). Since only IPSOS and Infotrak had more than one or two data points, I only used the results from these two firms for the analysis. The overall trends with the predictions and the confidence intervals are depicted in the first graph. As before, we see the support for the two candidates narrowing down as we approached the elections, and competing within a converging margin of error.
+
+<img src="/post/kenya2013_files/figure-html/file_show.pdf" alt="some text"  width="4200" height="4200">
+
+Now to the house effects. As you can see below, unfortunately, there's simply not enough data points to estimate the house effects. We see that while IPSOS underestimated the support for the both candidates, Infotrak underestimated Uhuru support and overestimated Raila support. But every single one of the confidence intervals is wide and cross zero, so cannot really say much about anything.
+
+<img src="/post/kenya2013_files/figure-html/file_show1.pdf" alt="some text"  width="4200" height="4200">
+
+
+## Simple Bayesian Prediction Model
+
+Finally, as before, I conducted the same simple Bayesian Prediction Model with sequential learning as I did for the 2017 data. The resulting distribution of the mean is plotted below. The mean of means retrieved is approximately -6.27% difference between Uhuru and Raila, with the 1st and 3rd quartiles being -6.30% and -6.23%. So this model predicts that instead of winning by 6.81% margin, Kenyatta would lose by 6.2% if the elections were held on Feb 26, 2013. That's off by 13%! Well, what can I say. I've learnt a fair bit about programming and things that I don't know. More exercises to follow..
+
+
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
+
+# 5. Bayesian Prediction --------------------------------------------------
+
+
+library(ggmcmc, quietly = T)
+library(plyr,quietly = T)
+
+surveys_new <- surveys_new[order(surveys_new$dt,decreasing=F),]
+
+surveys_new$N <- with(surveys_new, {N_p + N_j})
+
+surveys_new_aggr <- ddply(surveys_new, "Pollster", 
+                          summarize, N_p=sum(N_p), N_j=sum(N_j), N=sum(N))
+
+surveys_new <- surveys_new[!is.na(surveys_new$N),]
+
+#uniform prior 
+alpha <- c(1,1)
+#alpha <- c(50.51,43.7)
+
+baye_diffs <- c()
+freq_diff <- c()
+ci <- c()
+
+
+#sequential learning  
+for(i in 1:nrow(surveys_new)){
+  obs <- unlist(surveys_new[i, c("N_j", "N_p")])
+  post <- MCmultinomdirichlet(obs, alpha, mc=10000)
+  baye_diffs <- append(baye_diffs, round(mean(post[,1] - post[,2]), 3))
+  alpha <- (alpha + obs)
+  #samp <- rdirichlet(n, as.vector(alpha))
+  #obs[1]/sum(obs) 
+  #p <- obs[1]/sum(obs)
+  #plus_minus <- qnorm(0.975) * sqrt( (obs[1]/sum(obs) * sum(obs[c(2,3)])/sum(obs))/(sum(obs) - 1))
+  #print(sprintf("%f +- %f", p, plus_minus))
+  
+  p_1 <- obs[1]/sum(obs)
+  p_2 <- obs[2]/sum(obs)
+  conf_interval <- qnorm(0.975) * 1/sqrt(sum(obs)) * sqrt(p_1 *(1- p_1) + p_2 * (1 - p_2) + 2 * p_1 * p_2)
+  freq_diff <- append(freq_diff, p_1 - p_2)
+  ci <- append(ci, conf_interval)
+}
+
+
+diff_dist <- data.frame(diffs_val=as.numeric((post[,1] - post[,2]))*100)
+
+mdiff <- mean(diff_dist$diffs_val)
+
+error <- qt(0.975,df=length(diff_dist$diffs_val)-1)*sd(diff_dist$diffs_val)/sqrt(length(diff_dist$diffs_val))
+left <- mean(diff_dist$diffs_val)-error
+right <- mean(diff_dist$diffs_val)+error
+
+
+ggplot(diff_dist, aes(diffs_val)) + 
+  geom_histogram(binwidth=0.1) + 
+  scale_x_continuous(breaks=round(c(as.vector(summary(diff_dist$diffs_val))), digits=3)) +
+  theme_bw() +
+  labs(title = "Expexted Difference Between Uhuru and Raila Support",
+       subtitle = "Mean Posterior from Monte Carlo Simulation (100,000 times)",
+       caption = "Source: Information from Various Polling Firms and News Media", 
+       x = paste("Mean of Uhuru Support - Raila Support", 
+                 "\n (Min, 1Q, Mean, 3Q, Max)"), y = "Number of Times")
+
+```
+
+
+
+
+
