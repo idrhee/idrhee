@@ -156,6 +156,11 @@ defaultContentLanguageInSubdir = false
   name = "Home"
   url = "#about"
   weight = 1
+
+[[menu.main]]
+  name = "CV"
+  url = "./rhee_cv/"
+  weight = 3
   
 [[menu.main]]
   name = "Research"
