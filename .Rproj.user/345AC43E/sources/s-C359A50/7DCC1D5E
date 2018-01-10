@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1515524912310.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7DCC1D5E",
+    "lastKnownWriteTime" : 1515554544,
+    "last_content_update" : 1515554544,
+    "path" : "~/Dropbox/_doc/_archive/other/idrhee/config.toml",
+    "project_path" : "config.toml",
+    "properties" : {
+        "cursorPosition" : "110,26",
+        "scrollLine" : "102"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "toml"
+}

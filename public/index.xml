@@ -2,21 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Inbok Rhee on Inbok Rhee</title>
-    <link>/index.xml</link>
+    <link>/</link>
     <description>Recent content in Inbok Rhee on Inbok Rhee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Inbok Rhee</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>CV</title>
-      <link>/Rhee_CV/</link>
+      <link>/rhee_cv/</link>
       <pubDate>Tue, 09 Jan 2018 12:00:00 +0000</pubDate>
       
-      <guid>/Rhee_CV/</guid>
-      <description>&lt;p&gt;I embed a current version of my CV below. You can also download the PDF here.&lt;/p&gt;
+      <guid>/rhee_cv/</guid>
+      <description>&lt;p&gt;I embed a current version of my CV below. You can also &lt;a href=&#34;https://inbokrhee.com/files/Rhee_CV.pdf&#34; target=&#34;_blank&#34;&gt;download the PDF here&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe src=&#34;//docs.google.com/viewer?url=http://www.inbokrhee.com/files/rhee_cv.pdf?dl=0&amp;amp;hl=en_US&amp;amp;embedded=true&#34; class=&#34;gde-frame&#34; style=&#34;width:100%; height:800px; border: none;&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 </description>
     </item>
     

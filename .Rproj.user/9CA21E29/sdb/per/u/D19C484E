@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "a <- c(\"H\", \"H\", \"H\", \"N\", \"T\", \"N\", \"T\", \"H\", \"N\", \"T\", \"T\")\n\nb <- 1:11\n\nc <- NA\n\ndf <- data.frame(a, b, c)\n\ni <- 1\n\nif(df$a[i]==df$a[i+1]){\n  df$c[i] <- paste(df$b[i], df$b[i+1])\n}\n\ndf\n\nnew_aa <- vector()\n\naa <- rle(a)$length\n\n\nfor (i in 1:length(aa)){\n  if(aa[i]>1){\n    new_val <- c(aa[i], rep(NA, (aa[i]-1)))\n  } else{\n    new_val <- aa[i]\n  }\n  new_aa <- c(new_aa, new_val)\n}\n\ndf$c <- new_aa\n\ndf\n",
+    "created" : 1506393722588.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2796013618",
+    "id" : "D19C484E",
+    "lastKnownWriteTime" : 4437501888,
+    "last_content_update" : 1506400382080,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

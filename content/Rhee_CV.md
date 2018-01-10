@@ -15,4 +15,6 @@ math = true
 
 +++
 
-I embed a current version of my CV below. You can also download the PDF here.
+I embed a current version of my CV below. You can also [download the PDF here](https://inbokrhee.com/files/Rhee_CV.pdf)
+
+<iframe src="//docs.google.com/viewer?url=http://www.inbokrhee.com/files/rhee_cv.pdf?dl=0&amp;hl=en_US&amp;embedded=true" class="gde-frame" style="width:100%; height:800px; border: none;" scrolling="no"></iframe>

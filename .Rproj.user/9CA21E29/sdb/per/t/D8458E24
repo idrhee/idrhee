@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\nlibrary(rvest)\nlibrary(stringr)\nsite <- \"http://info.mzalendo.com/hansard/\"\nhans <- site %>% read_html() \n\nlinks <- hans %>% \n  html_nodes(\"li a\") %>% \n  html_attr(\"href\")\nhead(links,50)\n\n\n\nlinks <- links[grepl(\"^/hansard/sitting\", links)]\nhead(links)\nend <- length(links)\nend <- 1\nk <- 1\n\ndat <- data.frame()\nfor (k in 1:end){\n  print(paste(k, \"/\", end))\n  #site <- paste0(\"http://info.mzalendo.com\", links[k])\n  site <- \"/Users/idrhee/Downloads/us.sitesucker.mac.sitesucker/info.mzalendo.com/hansard/sitting/senate/2017-06-09.html\"\n  \n  hans <- site %>% read_html() \n  \n  speaker <- hans %>%\n    html_nodes(\"strong\") %>%\n    html_text()\n  \n  speech <- hans %>%\n    html_nodes(\"#page p\") %>%\n    html_text()\n  \n  headings <- hans %>%\n    html_nodes(\"h2\") %>%\n    html_text()\n  \n  date <- str_sub(links[k], -19, -1)\n  \n  dat1 <- data.frame(date, speaker, speech, headings=NA, url=links[k])\n  \n  \n  htmlCode = readLines(site)\n  htmlCode <- trimws(htmlCode)\n  htmlCode <- htmlCode[!grepl(\"^<strong\", htmlCode)]\n  htmlCode <- htmlCode[!grepl(\"^\\\\(\", htmlCode)]\n\n  cleanFun <- function(htmlString) {\n    return(gsub(\"<.*?>\", \"\", htmlString))\n  }\n\n  htmlCode <- cleanFun(htmlCode)\n  htmlCode <- trimws(htmlCode)\n  htmlCode <- htmlCode[!grepl(\"^$\", htmlCode)]\n  dat_html <- data.frame(ind=1:length(htmlCode), code=htmlCode)\n\n  dat$speech <- trimws(dat$speech)\n\n  headings <- headings[nchar(headings)>3]\n  headings\n  i <- 14\n  dat_html$code <- as.character(dat_html$code)\n  head(dat_html)\n\n    # fill down\n  for (i in 1:length(headings)){\n    id <- as.numeric(rownames(dat_html[dat_html$code==headings[i],]))\n\n    if(grepl(\"^[[:upper:]]| +$\", dat_html$code[id+1])){\n      \n    }\n    dat1$headings[dat1$speech==dat_html$code[id+1]] <- headings[i]\n  }\n  \n  dat1\n  \n  \n  # filld down the headings\n  nmHeadings <- as.numeric(rownames(dat1)[!is.na(dat1$headings)])\n  #i <- 2\n  for (i in 1:length(nmHeadings)){\n    if(i<length(nmHeadings) & nmHeadings[i]+1!=nmHeadings[i+1]){\n      dat1$headings[(nmHeadings[i]+1):(nmHeadings[i+1]-1)] <- dat1$headings[nmHeadings[i]]\n    }  else {\n      #dat$headings[(nmHeadings[i]+1):nrow(dat)] <- dat$headings[nmHeadings[i]]\n    }\n  }\n  \n  dat <- rbind(dat, dat1)\n  \n}\ndat\n",
+    "created" : 1506382603093.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1536607264",
+    "id" : "D8458E24",
+    "lastKnownWriteTime" : 1506458657,
+    "last_content_update" : 1506458657943,
+    "path" : "~/Dropbox/_doc/_inbox/extract11th.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
