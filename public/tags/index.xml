@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Inbok Rhee</title>
-    <link>http://inbokrhee.netlify.com/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Inbok Rhee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,56 +12,56 @@
     
     <item>
       <title>Content tagged as &#39;Academic&#39;</title>
-      <link>http://inbokrhee.netlify.com/tags/academic/</link>
+      <link>/tags/academic/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://inbokrhee.netlify.com/tags/academic/</guid>
+      <guid>/tags/academic/</guid>
       <description>&lt;p&gt;Here is a list of all the content that has been tagged as &lt;em&gt;academic&lt;/em&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Election</title>
-      <link>http://inbokrhee.netlify.com/tags/election/</link>
+      <link>/tags/election/</link>
       <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://inbokrhee.netlify.com/tags/election/</guid>
+      <guid>/tags/election/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kenya</title>
-      <link>http://inbokrhee.netlify.com/tags/kenya/</link>
+      <link>/tags/kenya/</link>
       <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://inbokrhee.netlify.com/tags/kenya/</guid>
+      <guid>/tags/kenya/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Opinion Polls</title>
-      <link>http://inbokrhee.netlify.com/tags/opinion-polls/</link>
+      <link>/tags/opinion-polls/</link>
       <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://inbokrhee.netlify.com/tags/opinion-polls/</guid>
+      <guid>/tags/opinion-polls/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Poli11</title>
-      <link>http://inbokrhee.netlify.com/tags/poli11/</link>
+      <link>/tags/poli11/</link>
       <pubDate>Tue, 09 Jan 2018 12:00:00 +0000</pubDate>
       
-      <guid>http://inbokrhee.netlify.com/tags/poli11/</guid>
+      <guid>/tags/poli11/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>http://inbokrhee.netlify.com/tags/teaching/</link>
+      <link>/tags/teaching/</link>
       <pubDate>Tue, 09 Jan 2018 12:00:00 +0000</pubDate>
       
-      <guid>http://inbokrhee.netlify.com/tags/teaching/</guid>
+      <guid>/tags/teaching/</guid>
       <description></description>
     </item>
     
