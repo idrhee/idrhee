@@ -2,16 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Teaching on Inbok Rhee</title>
-    <link>/tags/teaching/</link>
+    <link>/tags/teaching/index.xml</link>
     <description>Recent content in Teaching on Inbok Rhee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Inbok Rhee</copyright>
-    <lastBuildDate>Tue, 09 Jan 2018 12:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/teaching/" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/teaching/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>POLI11: Introduction to Comparative Politics</title>
+      <title>POLI11: Introduction to Comparative Politics (Winter 2018)</title>
       <link>/poli11_winter2018/</link>
       <pubDate>Tue, 09 Jan 2018 12:00:00 +0000</pubDate>
       

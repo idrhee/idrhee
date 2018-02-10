@@ -1,0 +1,29 @@
+---
+date: 2017-03-03T17:45:31+03:00
+title: test
+---
+
+# another test
+
+```{r}
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(streamgraph)
+
+df_parties <- read_excel("~/Dropbox/_doc/_archive/other/_KH/1_data/1_key_data/all_elec_from_database.xlsx")
+df_parties <- df_parties %>% filter(Position==1)
+df_parties_tally <- df_parties %>% group_by(ElecYear, PartyCode) %>% tally
+df_parties_tally <- df_parties_tally %>% filter(ElecYear %in% c(1992, 1997, 2002, 2007, 2013))
+df_parties_tally
+
+
+
+streamgraph(df_parties_tally, key="PartyCode", value="n", date="ElecYear")
+
+
+ggplot(df_parties_tally, aes(x=ElecYear, y=n, fill=PartyCode, order=desc(n))) +geom_area()
+
+
+```
+
