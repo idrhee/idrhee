@@ -16,6 +16,7 @@ weight = 20
 **Dissertation**
 
 Title: Legislator A ention and Democratic Development in Kenya
+
 Committee: [Karen Ferree](https://polisci.ucsd.edu/about-our-people/faculty/faculty-directory/currently-active-faculty/ferree-profile.html) (Co-Chair), [Clark Gibson](http://pages.ucsd.edu/~ccgibson/) (Co-Chair), [Scott Desposato](http://www.desposato.org), [Stephan Haggard](http://gps.ucsd.edu/faculty-directory/stephan-haggard.html), and [Molly Roberts](http://www.margaretroberts.net)
 
 **Papers & Presentations**
