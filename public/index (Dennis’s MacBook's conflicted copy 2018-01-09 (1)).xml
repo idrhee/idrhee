@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inbok Rhee on Inbok Rhee</title>
+    <link>/</link>
+    <description>Recent content in Inbok Rhee on Inbok Rhee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Inbok Rhee</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CV</title>
+      <link>/rhee_cv1/</link>
+      <pubDate>Tue, 09 Jan 2018 12:00:00 +0000</pubDate>
+      
+      <guid>/rhee_cv1/</guid>
+      <description>&lt;p&gt;I embed a current version of my CV below. You can also &lt;a href=&#34;https://inbokrhee.com/files/Rhee_CV.pdf&#34; target=&#34;_blank&#34;&gt;download the PDF here&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe src=&#34;//docs.google.com/viewer?url=http://www.inbokrhee.com/files/rhee_cv.pdf?dl=0&amp;amp;hl=en_US&amp;amp;embedded=true&#34; class=&#34;gde-frame&#34; style=&#34;width:100%; height:800px; border: none;&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>POLI11: Introduction to Comparative Politics (Winter 2018)</title>
+      <link>/poli11_winter2018/</link>
+      <pubDate>Tue, 09 Jan 2018 12:00:00 +0000</pubDate>
+      
+      <guid>/poli11_winter2018/</guid>
+      <description>
+
+&lt;h2 id=&#34;sections-sequo-147&#34;&gt;Sections (SEQUO 147)&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Fridays 09:00 - 09:50 am&lt;/li&gt;
+&lt;li&gt;Fridays 10:00 - 10:50 am
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;section-slides&#34;&gt;Section Slides&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Week 1: &lt;a href=&#34;http://www.inbokrhee.com/files/poli11_winter2018/secion1.pdf&#34; target=&#34;_blank&#34;&gt;Janurary 12&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Opinion Polls and the Kenyan Presidential Election - 2</title>
+      <link>/oldpost/opinion-polls-and-the-kenyan-presidential-election-2/</link>
+      <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/oldpost/opinion-polls-and-the-kenyan-presidential-election-2/</guid>
+      <description>&lt;p&gt;Continuing with the series, I took a look at the 2013 opinion polls and tried to compare it to the actual election returns. All data come from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Kenyan_general_election,_2013#Opinion_polls&#34;&gt;Wikipedia page on the 2013 elections&lt;/a&gt;. As before, I used only the data points which at least provided the sample size and the survey duration.&lt;/p&gt;
+&lt;div id=&#34;trends&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Trends&lt;/h2&gt;
+&lt;p&gt;As before, I start with the overall time trends. The overtime plot shows Uhuru rapidly narrowing the gap with Raila. On the election day, Uhuru performed much better than any of the polls suggested, and Raila did much worse than what the polling data trend showed.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The next graph shows the difference in the rates of support. Again, here we can see that the gap is quickly coming down close to zero as the election date approached. However, on the election date, Uhuru won by 6.81 % margin over Raila.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;survey-firms&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Survey Firms&lt;/h2&gt;
+&lt;p&gt;So how well did the polls perform in terms of how accurately they predicted the actual election return? While there must be better ways to go about answering this question, by technical capabilities are quite limited. So, as a crude measure, I calculated the euclidian distance between the polling data closest to the election and the actual election results for all survey firms in the data. I excluded Synovate Research Reinvented, since their data (captured by Wikipedia) only provided information for the two leading candidates and their last survey was conducted in 2011, more than a year and a half prior to the election date. The resulting graph below shows that, among the four firms, IPSOS came closest to the actual results, followed by InfoTrak, Strategic Research, and Smart Octopus. Smart Octopus, in particular, seems to have been way off, compared to the other firms.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Next, I ran a very simple linear regression model where the dependent variable is the real gap between Uhuru and Raila support during the elections, and the independent variables included a categorical variable capturing which firm conducted the survey, and a numerical variable capturing the temporal distance to the election. For the categorical Polling Firm variable, I used IPSOS as the baseline category. The resulting model reads:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[Gap = 8.27 + 5.12*InfoTrak -15.49*SmartOctopus -0.79*StrategicResearch +5.08*SynovateResearch+0.02DaysUntilElection\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This shows that compared to IPSOS, the reference group, both InfoTrak and Synovate Research underestimated, while Strategic Research and Smart Octopus overestimated the Uhuru lead. The coefficient for days, while not apparent in the graph, is small (0.024) but positive and significant, which shows that the further away from the elections, the Uhuru lead was underestimated. Well, nothing really new or were not already clear from the time trends graph.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Finally, following &lt;a href=&#34;http://www.tandfonline.com/doi/abs/10.1080/10361140500302472&#34;&gt;Jackman (2006)&lt;/a&gt;, I tried to model the latent voting intention and measuring polling house effect using a more sophisticated Bayesian model. However, my knowledge and abilities for this type of modeling are severely limited. So instead, I borrowed R and Stan codes from the analysis done by statistician Peter Ellis on the Australian elections replicating the original study by Jackman (posts &lt;a href=&#34;http://ellisp.github.io/blog/2017/06/24/oz-polls-statespace&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://ellisp.github.io/blog/2017/07/09/oz-polls-revisited&#34;&gt;here&lt;/a&gt;). Since only IPSOS and Infotrak had more than one or two data points, I only used the results from these two firms for the analysis. The overall trends with the predictions and the confidence intervals are depicted in the first graph. As before, we see the support for the two candidates narrowing down as we approached the elections, and competing within a converging margin of error.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/file_show.pdf&#34; alt=&#34;some text&#34;  width=&#34;4200&#34; height=&#34;4200&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now to the house effects. As you can see below, unfortunately, there’s simply not enough data points to estimate the house effects. We see that while IPSOS underestimated the support for the both candidates, Infotrak underestimated Uhuru support and overestimated Raila support. But every single one of the confidence intervals is wide and cross zero, so cannot really say much about anything.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/file_show1.pdf&#34; alt=&#34;some text&#34;  width=&#34;4200&#34; height=&#34;4200&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-bayesian-prediction-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simple Bayesian Prediction Model&lt;/h2&gt;
+&lt;p&gt;Finally, as before, I conducted the same simple Bayesian Prediction Model with sequential learning as I did for the 2017 data. The resulting distribution of the mean is plotted below. The mean of means retrieved is approximately -6.27% difference between Uhuru and Raila, with the 1st and 3rd quartiles being -6.30% and -6.23%. So this model predicts that instead of winning by 6.81% margin, Kenyatta would lose by 6.2% if the elections were held on Feb 26, 2013. That’s off by 13%! Well, what can I say. I’ve learnt a fair bit about programming and things that I don’t know. More exercises to follow..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2013_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Opinion Polls and the Kenyan Presidential Election - 1</title>
+      <link>/oldpost/opinion-polls-and-the-kenyan-presidential-election-1/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/oldpost/opinion-polls-and-the-kenyan-presidential-election-1/</guid>
+      <description>&lt;p&gt;It’s five days to the election, and I’ve been playing a little bit with the opinion poll data for the 2017 Kenyan Elections. To the best of my abilities, I have collected the data from newspaper articles and the releases from major survey firms. I’ve only used surveys that were at least trying to be somewhat nationally representative, and those which included some basic details about the surveys including the total number of respondents or the survey period. This forced me to leave out the results from some pollsters like Trends and Insights For Africa (TIFA). There’s also a lot of other caveats and limitations, but we can talk more about those later.&lt;/p&gt;
+&lt;div id=&#34;trends-narrowing-the-gap&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Trends: Narrowing the Gap&lt;/h2&gt;
+&lt;p&gt;First things first, I’ve plotted the overtime trends in the polls, first by the level of supports for the two main candidates, Uhuru Kenyatta and Raila Odinga. Instead of picking the mid-date, I used all dates for which a given survey was conducted, to capture the durations for each survey. To better capture the overall time trends, I fitted a lowess line for the two leading candidates. The resulting graph below shows how the gap between the two candidates closed down as we get closer to the elections.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The next graph contains the same information, but this time using the difference in the rates of support. Again, here we can see that the gap is quickly coming down close to zero as we are getting close to the August 8th.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-bayesian-prediction-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simple Bayesian Prediction Model&lt;/h2&gt;
+&lt;p&gt;But what can we learn from these polls other than the overtime trends as we get close to the election date? Borrowing from a similar analysis done for &lt;a href=&#34;http://freesearch.pe.kr/archives/4086&#34;&gt;the 2014 Seoul Mayoral Election&lt;/a&gt;, I conducted a simple Bayesian Prediction Model with sequential learning. In other words, starting from a uniform prior, the model takes in the new polling information as a new state of the world, updates the current beliefs about the world, and repeats this process for all polling data. For those who are interested, here are some more details about the model used.&lt;/p&gt;
+&lt;div id=&#34;multinomial-likelihood-with-a-dirichlet-prior&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Multinomial Likelihood with a Dirichlet Prior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Support Counts (&lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;: Uhuru , &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;: Raila, &lt;span class=&#34;math inline&#34;&gt;\(e\)&lt;/span&gt;: Others)
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(n_j, n_p, n_e\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Likelihood
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(X_j,X_p,X_e \sim Multinomial(n, \theta_{n_j}, \theta_{n_p}, \theta_{n_e})\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Prior
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\pi(\theta_j, \theta_p, \theta_e) \propto 1\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_{n_j}, \theta_{n_p}, \theta_{n_e} \sim Dirichlet(1,1,1)\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Posterior
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_{n_j}, \theta_{n_p}, \theta_{n_e}|n_j,n_p,n_e \sim Dirichlet(n_j + 1, n_p + 1, n_e + 1)\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;steps&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Steps&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Set uniform prior.&lt;/li&gt;
+&lt;li&gt;Update posterior distribution parameters on each survey.&lt;/li&gt;
+&lt;li&gt;Do Monte Carlo Simulation and get samples on each parameters (100,000 samples).&lt;/li&gt;
+&lt;li&gt;Get &lt;span class=&#34;math inline&#34;&gt;\(\theta_p - \theta_j\)&lt;/span&gt; distribution and mean of that distribution.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The resulting distribution of the mean is plotted below. The mean of means retrieved is approximately 8.2% difference between Uhuru and Raila, with the 1st and 3rd quantiles being approximately 7.9% and 8.4% respectively.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/kenya2017_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;caveats&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Caveats&lt;/h2&gt;
+&lt;p&gt;So what does this mean? Well, at least this simple analysis shows that the incumbent president may win by a much wider margin than what the most recent polls have predicted (see, e.g. &lt;a href=&#34;http://www.the-star.co.ke/news/2017/08/02/uhuru-raila-in-very-tight-race-three-polls-show_c1608626&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://www.standardmedia.co.ke/article/2001250012/ipsos-and-infotrak-differ-yet-again-on-who-will-win-presidential-election&#34;&gt;here&lt;/a&gt; for a summary of the most recent polls). The results from this model are also close to &lt;a href=&#34;https://kenopalo.com/2017/08/02/what-the-poll-numbers-tell-us-about-kenyas-presidential-election-next-tuesday/&#34;&gt;Ken Opalo’s more sophisticated model&lt;/a&gt; which takes into account not only similar opinion polls data but also considers county-level turnout data and puts Uhuru leading by 5.6% (model with less weight to registration rates) to 8% (more weight to registration rates).&lt;/p&gt;
+&lt;p&gt;With all that said, there are also a number of limitations to this model and the entire exercise. First, the overall number of polling data points may be too small compared to other advanced democracy contexts to make any accurate predictions. Whereas I have only been able to include a total of 20 pre-elections surveys, &lt;a href=&#34;https://projects.fivethirtyeight.com/2016-election-forecast/&#34;&gt;Nate Silver’s prediction for the 2016 U.S. Presidential Election&lt;/a&gt;, for example, utilized 12,624 polls at the national level alone and many more polling data at the state-level. Second, accuracy and integrity of (at least some) pollsters have always been a concern during the Kenyan election cycle. Even during this election cycle, there’s been many news articles and op-eds questioning the trustworthiness of opinion polls based on factors ranging from the methodology used to who sponsored the polls in the first place (some example articles &lt;a href=&#34;http://www.nation.co.ke/news/politics/Why-did-media-ignore-poll-showing-Raila-ahead-of-Uhuru--/1064-4027776-u3xb9tz/index.html&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;%5Bhere%5D(http://www.capitalfm.co.ke/news/2017/07/how-useful-are-opinion-polls-experts-weigh-in/)&#34;&gt;here&lt;/a&gt;, and &lt;a href=&#34;https://www.standardmedia.co.ke/ureport/story/2001248940/why-i-do-not-trust-both-ipsos-and-infotrak-polls&#34;&gt;here&lt;/a&gt;). Third, even if we assume that the existing polls are accurately capturing the trends in voter preference, (suspected) &lt;a href=&#34;http://www.tandfonline.com/doi/full/10.1080/17531055.2013.871182&#34;&gt;precedents of electoral regularities in the past&lt;/a&gt;, raises the possibility that the polling data could be disconnected with the actual voting records on the election day. Fourth, as in any election, there has been, and probably will be, quite a few dramatic events at the last minute. For instance, with just ten days to the election, the Deputy President William Ruto’s house has been attacked by unknown assailant(s) minutes after he left the house (&lt;a href=&#34;http://www.nation.co.ke/news/Gunmen-attack-DP-Ruto-s-Sugoi-home/1056-4037082-t0ycchz/index.html&#34;&gt;link&lt;/a&gt;) and then with just a week left until the votes, the Independent Electoral and Boundaries Commission (IEBC)’s ICT Manager, Chris Msando, has been found dead with signs of torture (&lt;a href=&#34;http://www.nation.co.ke/news/IEBC-ICT-manager-Chris-Musando-dead/1056-4039424-8r8f7v/index.html&#34;&gt;link&lt;/a&gt;). Some in the opposition have been quick to suggest that both events have been orchestrated by the ruling Jubilee party (&lt;a href=&#34;http://www.the-star.co.ke/news/2017/08/03/it-is-no-secret-jubilee-killed-jacob-juma-chris-msando-wetangula_c1609576&#34;&gt;link&lt;/a&gt;). These events and any other incidents that may happen between now and the 8th could potentially affect public opinion in a drastic manner during this time when the release of any additional poll results are prohibited. Lastly, of course, the model itself is quite simplistic, and my technical prowess on this matter is severely limited, to say the least. If only I paid more attention during &lt;a href=&#34;http://www.sethjhill.com/&#34;&gt;Seth Hill&lt;/a&gt;’s Bayesian class..&lt;/p&gt;
+&lt;p&gt;So there are many reasons why the prediction presented in this blog post may not be useful. We will see in five days time. In the meantime, it’ll be interesting to look at data from any previous elections as well as polling data broken down at the sub-national level, by counties or even constituencies. More on these soon.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/rhee_cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/rhee_cv/</guid>
+      <description>
+
+&lt;p&gt;[Inbok Rhee]{}&lt;br /&gt;
+Phone: &lt;code&gt;+1 (347) 514-5726&lt;/code&gt;&lt;br /&gt;
+email: &lt;a href=&#34;mailto:idrhee@ucsd.edu&#34; target=&#34;_blank&#34;&gt;idrhee at ucsd dot edu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;University of California, San Diego&lt;br /&gt;
+Department of Political Science&lt;br /&gt;
+Social Sciences Building &lt;code&gt;322&lt;/code&gt;&lt;br /&gt;
+La Jolla, CA &lt;code&gt;92093-0521&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;education-education-unnumbered&#34;&gt;Education {#education .unnumbered}&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Department of Political Science, University of California, San
+Diego, United States&lt;/strong&gt;&lt;br /&gt;
+Doctorate of Philosophy in Political Science, 2012-Present&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Department of Political Science, University of California, San
+Diego, United States&lt;/strong&gt;&lt;br /&gt;
+Master of Arts in Political Science, 2014&lt;br /&gt;
+&lt;em&gt;Fields: Comparative Politics, Political Economy of Development,
+Political Methodology&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;School of International and Public Affairs (SIPA), Columbia
+University, United States&lt;/strong&gt;&lt;br /&gt;
+Master of International Affairs, 2012&lt;br /&gt;
+&lt;em&gt;Fields: Advanced Policy Analysis and International Economic Policy&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;School of Oriental and African Studies (SOAS), University of
+London, United Kingdom&lt;/strong&gt;&lt;br /&gt;
+Bachelor of Arts in Politics and Development Studies, 2006&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;research-research-unnumbered&#34;&gt;Research {#research .unnumbered}&lt;/h1&gt;
+
+&lt;h2 id=&#34;dissertation-dissertation-unnumbered&#34;&gt;Dissertation {#dissertation .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Title: Legislator Attention and Democratic Development in Kenya&lt;br /&gt;
+Committee: Karen Ferree (Co-Chair), Clark Gibson (Co-Chair), Scott
+Desposato, Stephan Haggard, &amp;amp; Molly Roberts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;under-review-under-review-unnumbered&#34;&gt;Under Review {#under-review .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;“Subjective-To-Subjective Link in Economic Voting Using
+Afrobarometer Data.&amp;rdquo; &lt;em&gt;Presented at the Annual Western Political
+Science Association (WPSA) Conference. March 2016.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;“The African Legislative Speech Archive.” with Karen Ferree.
+National Science Foundation (NSF) Grant Proposal (Budget: \$411,369)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-paper-working-paper-unnumbered&#34;&gt;Working Paper {#working-paper .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;“Diversity, Institutions, and Politics: Explaining the Distribution
+of Public Services in South Africa.” with John Porten and Clark
+Gibson. Invited for Journal Submission.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;“North Korea in Their Own Words: Measuring Foreign Policy Preference
+Using Text as Data.&amp;rdquo; with John Seungmin Kuk. &lt;em&gt;Presented at the
+Society for Political Methodology (PolMeth) Annual Meeting XXXI.
+July 2014, and at the Annual International Studies Association (ISA)
+Conference. March 2016.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;“Ethnicity, Partisanship and Representation: Analyzing Kenyan
+Parliamentary Hansard.&amp;rdquo; &lt;em&gt;Presented at the Annual Midwest Political
+Science Association (MPSA) Conference. April 2016.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;“Political Competition and Ethnic Rhetoric in African Media.&amp;rdquo; with
+Alex Verink.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;work-in-progress-work-in-progress-unnumbered&#34;&gt;Work in Progress {#work-in-progress .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;“Primary Bumps? Intra-Party Politics and Nominations in Kenya.”&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;“Voter Preference for Representation Style: Evidence from A Conjoint
+Survey Experiment in Kenya.&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;other-policy-writings-other-policy-writings-unnumbered&#34;&gt;Other Policy Writings {#other-policy-writings .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;“Park Geun-hye Unraveling&amp;rdquo; Series with Stephan Haggard and Jaesung
+Ryu. &lt;em&gt;North Korea: Witness To Transformation&lt;/em&gt;. November 2016 - March
+2017&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;“The Role of Peacekeeping Operations in Electoral Processes.&amp;rdquo; with
+Marie Doucey, Sara Jacobs, and Aaron Pangburn. Published (Non
+peer-reviewed policy paper). &lt;em&gt;Policy Report for Policy and Best
+Practices Service (PBPS), Department of Peacekeeping Operations
+(DPKO), United Nations. May 2012.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;professional-experience-professional-experience-unnumbered&#34;&gt;Professional Experience {#professional-experience .unnumbered}&lt;/h1&gt;
+
+&lt;h2 id=&#34;fellowships-grants-fellowships-grants-unnumbered&#34;&gt;Fellowships &amp;amp; Grants {#fellowships-grants .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Summer Graduate Teaching Scholars Program. 2018. (\$1,200)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Policy Design &amp;amp; Evaluation Lab Graduate Student Research
+Funding. 2017. (\$7,500)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;National Science Foundation Doctoral Dissertation Research
+Improvement Grant. 2017. (\$16,934)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Fulbright-Hays Doctoral Dissertation Research Aboard
+Fellowship. 2016. (\$51,338)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Korean-American Scholarship Foundation Designated Scholarship. 2016.
+(\$2,000)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Policy Design &amp;amp; Evaluation Lab Graduate Student Research
+Funding. 2016. (\$5,000)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Tecle Kidane-Mariam Award, Friends of the International
+Center. 2016. (\$2,000)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;professional-affiliations-academic-service-professional-affiliations-academic-service-unnumbered&#34;&gt;Professional Affiliations &amp;amp; Academic Service {#professional-affiliations-academic-service .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Research Associate, Institute for Development Studies, University of
+Nairobi, Kenya. 2016-present. (Supervisors: Professors Karuti
+Kanyinga and Joshua Kivuva)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Fellow. Center for the Study of African Political Economy (CSAPE),
+UCSD. 2012-present.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Member. Africanist Working Group, UCSD. 2017-present.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Organizer. Africanist Working Group, UCSD. 2015-2017.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Member. African Studies Association; American Political Science
+Association; Midwest Political Science Association; Western
+Political Science Association.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Reviewer. American Journal of Political Science&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conference-conference-unnumbered&#34;&gt;Conference {#conference .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;UCSD North Korea Conference. 2017. (Paper Presentation)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Southern California Comparative Political Science (SCPI)
+Conference. 2016. (Participant)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;International Studies Association (ISA). 2016. (Paper Presentation)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Midwest Political Science Association (MPSA). 2016. (Paper
+Presentation)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Western Political Science Association (WPSA). 2016. (Paper
+Presentation)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;African Studies Association (ASA). 2015. (Participant)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Working Group on African Political Economy (WGAPE). 2015 &amp;amp; 2012.
+(Participant)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Society for Political Methodology (PolMeth). 2014. (Poster
+Presentation)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;research-assistantships-research-assistantships-unnumbered&#34;&gt;Research Assistantships {#research-assistantships .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Stephan Haggard (UCSD) &amp;amp; Robert Kaufman (Rutgers) on democratic
+reversion. 2017-Present. Emilie Hafner-Burton &amp;amp; David Victor (UCSD)
+on foreign aid and governance. 2016-Present. Experiments in
+Governance and Politics (EGAP) on providing feasibility assessments.
+2015-Present. Ryan Jablonski (LSE) &amp;amp; Brigitte Seim (UNC) on
+information &amp;amp; aid in Malawi. 2015-2017. Karen Ferree (UCSD) on
+gender and legislative representation in Africa. 2016. Stephan
+Haggard (UCSD) on the politics of current communist systems. 2016.
+Simeon Nichter (UCSD) &amp;amp; Salvatore Nunnari (Columbia) on clientelism
+in Brazil. 2013-2016. Clark Gibson &amp;amp; Karen Ferree (UCSD) on
+electoral politics in Kenya, South Africa, &amp;amp; Uganda. 2012-2014.
+Shigeo Hirano, Michael Ting, &amp;amp; Dorian Warren (Columbia) on public
+unions in the U.S. 2011-2012. Kimuli Kasara (Columbia) on electoral
+violence in Kenya. 2011.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;other-professional-experience-other-professional-experience-unnumbered&#34;&gt;Other Professional Experience {#other-professional-experience .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1st/2nd Lieutenant, Republic of Korea Air Force. 2007-2010.&lt;br /&gt;
+Awarded United States Military Meritorious Service Medal for
+Distinguished Service.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Intern, United Nations Environment Programme (UNEP), Korea
+Office. 2005.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;teaching-teaching-unnumbered&#34;&gt;Teaching {#teaching .unnumbered}&lt;/h1&gt;
+
+&lt;h2 id=&#34;teaching-experience-teaching-experience-unnumbered&#34;&gt;Teaching Experience {#teaching-experience .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Section Instructor. Introduction to Comparative Politics.
+Winter 2018.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Section Instructor. Graduate Quantitative Methods. Fall 2017.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Co-Instructor. Graduate Math Bootcamp for Social Sciences. Fall
+2016, 2017.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Section Instructor. Urban Studies &amp;amp; Planning Program Senior
+Sequence. Fall 2016.&lt;br /&gt;
+(Equivalent to Research Design and Capstone Project for
+Undergraduates)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Guest Lecturer. Korean Politics, Graduate. Spring 2015.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Section Instructor. GIS. Fall 2015.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Section Instructor. Introduction to Comparative Politics.
+Winter 2014.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Guest Lecturer. Korean Politics, Undergraduate. Summer 2014.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Section Instructor. Political Inquiry. Fall 2013.&lt;br /&gt;
+(Equivalent to Statistics for Political Science Undergraduates)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;additional-teaching-training-additional-teaching-training-unnumbered&#34;&gt;Additional Teaching Training {#additional-teaching-training .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;POLI599. Undergraduate Teaching and Learning in Political Science.
+Fall 2017.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Introduction to College Teaching. Center for Engaged Teaching (CET)
+, UCSD. Fall 2017.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;mentorship-mentorship-unnumbered&#34;&gt;Mentorship {#mentorship .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Graduate Student Mentor, Undergraduate Research Apprenticeship.
+Winter &amp;amp; Spring 2018&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Teaching Assistant Mentor for Introduction to Comparative Politics.
+Winter 2018.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Graduate Student Mentor, UCSD-Morehouse-Spelman Summer Research
+Program. Summer 2016.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;grader-teaching-assistantships-graderteaching-assistantships-unnumbered&#34;&gt;Grader/Teaching Assistantships {#graderteaching-assistantships .unnumbered}&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;East Asian Political Thoughts &lt;em&gt;Summer 2016, Fall 2014&lt;/em&gt; Politics of
+Multiculturalism &lt;em&gt;Spring 2016&lt;/em&gt; Politics of Immigration &lt;em&gt;Winter 2016&lt;/em&gt;
+GIS &amp;amp; Spatial Data Analysis &lt;em&gt;Fall 2015&lt;/em&gt; International Human Rights
+Law &lt;em&gt;Spring 2015&lt;/em&gt; Race and Law &lt;em&gt;Spring 2014&lt;/em&gt; Political Development
+of Western Europe &lt;em&gt;Winter 2013, Winter 2018&lt;/em&gt; Religion and Politics
+&lt;em&gt;Spring 2013&lt;/em&gt; International Relations After the Cold War &lt;em&gt;Fall 2012&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;skills-and-other-skills-and-other-unnumbered&#34;&gt;Skills and Other {#skills-and-other .unnumbered}&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Language: English (Native); Kiswahili (Beginner); Korean (Native)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Field Experience: Kenya. Dec 2016 - Aug 2017, Summer 2015. (11
+months)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Methodological Training: Policy Evaluation and Design Lab (PDEL)
+Certificate, &lt;em&gt;School of Global Policy and Strategy (GPS), UCSD&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Programming:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Advanced: Qualtrics, LaTeX, Microsoft Excel, R, STATA&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Intermediate: ArcGIS, Gephi, SPSS&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Basic: Applescript, BUGS, HTML, Javascript, NetLogo, o-Tree,
+python, Stan, SurveyToGo, z-Tree&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Citizenship:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;United States of America &amp;amp; Republic of Korea&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Dual Citizenship. (Legal American Name: Dennis Rhee, Legal
+Korean Name: Inbok Rhee)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;references-references-unnumbered&#34;&gt;References {#references .unnumbered}&lt;/h1&gt;
+
+&lt;h2 id=&#34;karen-e-ferree-karen-e-ferree-unnumbered&#34;&gt;Karen E. Ferree {#karen-e.-ferree .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Associate Professor of Political Science&lt;br /&gt;
+University of California, San Diego&lt;br /&gt;
+9500 Gilman Drive&lt;br /&gt;
+La Jolla, CA 92093-0521&lt;br /&gt;
++ 1 (858) 822-2309&lt;br /&gt;
+&lt;a href=&#34;mailto:keferree@ucsd.edu&#34; target=&#34;_blank&#34;&gt;keferree at ucsd dot edu&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;clark-c-gibson-clark-c-gibson-unnumbered&#34;&gt;Clark C. Gibson {#clark-c.-gibson .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Professor of Political Science&lt;br /&gt;
+University of California, San Diego&lt;br /&gt;
+9500 Gilman Drive&lt;br /&gt;
+La Jolla, CA 92093-0521&lt;br /&gt;
++ 1 (858) 534-3548&lt;br /&gt;
+&lt;a href=&#34;mailto:ccgibson@ucsd.edu&#34; target=&#34;_blank&#34;&gt;ccgibson at ucsd dot edu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[Last updated: ]{}&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

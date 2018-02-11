@@ -1,8 +1,8 @@
 +++
 date = "2018-01-09T12:00:00"
 draft = false
-tags = ["teaching", "poli11"]
-title = "POLI11: Introduction to Comparative Politics (Winter 2018)"
+tags = ["teaching", "poli11", "Winter 2018"]
+title = "POLI11: Introduction to Comparative Politics"
 math = true
 #summary = """
 #Create a beautifully simple personal or academic website in under 10 minutes. 

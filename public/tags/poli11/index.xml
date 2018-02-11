@@ -2,35 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Poli11 on Inbok Rhee</title>
-    <link>/tags/poli11/index.xml</link>
+    <link>/tags/poli11/</link>
     <description>Recent content in Poli11 on Inbok Rhee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Inbok Rhee</copyright>
-    <atom:link href="/tags/poli11/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Jan 2018 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/poli11/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>POLI11: Introduction to Comparative Politics (Winter 2018)</title>
+      <title>POLI11: Introduction to Comparative Politics</title>
       <link>/poli11_winter2018/</link>
       <pubDate>Tue, 09 Jan 2018 12:00:00 +0000</pubDate>
       
       <guid>/poli11_winter2018/</guid>
-      <description>
-
-&lt;h2 id=&#34;sections-sequo-147&#34;&gt;Sections (SEQUO 147)&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Fridays 09:00 - 09:50 am&lt;/li&gt;
-&lt;li&gt;Fridays 10:00 - 10:50 am
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;section-slides&#34;&gt;Section Slides&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Week 1: &lt;a href=&#34;http://www.inbokrhee.com/files/poli11_winter2018/secion1.pdf&#34; target=&#34;_blank&#34;&gt;Janurary 12&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description> Sections (SEQUO 147)  Fridays 09:00 - 09:50 am Fridays 10:00 - 10:50 am   Section Slides  Week 1: Janurary 12  </description>
     </item>
     
   </channel>

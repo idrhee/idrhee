@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Winter 2018 on Inbok Rhee</title>
+    <link>/tags/winter-2018/</link>
+    <description>Recent content in Winter 2018 on Inbok Rhee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Inbok Rhee</copyright>
+    <lastBuildDate>Tue, 09 Jan 2018 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/winter-2018/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>POLI11: Introduction to Comparative Politics</title>
+      <link>/poli11_winter2018/</link>
+      <pubDate>Tue, 09 Jan 2018 12:00:00 +0000</pubDate>
+      
+      <guid>/poli11_winter2018/</guid>
+      <description> Sections (SEQUO 147)  Fridays 09:00 - 09:50 am Fridays 10:00 - 10:50 am   Section Slides  Week 1: Janurary 12  </description>
+    </item>
+    
+  </channel>
+</rss>
