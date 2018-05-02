@@ -14,9 +14,9 @@ weight = 60
 
 +++
 
-**Winter 2018**
+**Spring 2018**
 
-- Section Instructor. <a href="http://www.inbokrhee.com/poli11_winter2018/" target="_self">POLI11 Introduction to Comparative Politics</a> (Professor Karen Ferree)
+- Instructor. POLI/ECON 5D Introduction to Social Data Analytics
 - Graduate Student Mentor. [POLI198RA Research Apprenticeship](https://polisci.ucsd.edu/undergrad/research-apprenticeship/index.html)
 
 
