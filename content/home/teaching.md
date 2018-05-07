@@ -16,7 +16,7 @@ weight = 60
 
 **Spring 2018**
 
-- Instructor. POLI/ECON 5D Introduction to Social Data Analytics.
+- Instructor. POLI/ECON 5D Introduction to Social Data Analytics
 - Graduate Student Mentor. [POLI198RA Research Apprenticeship](https://polisci.ucsd.edu/undergrad/research-apprenticeship/index.html)
 
 
