@@ -58,7 +58,7 @@ defaultContentLanguageInSubdir = false
   organizations = [ { name = "University of California, San Diego", url = "https://polisci.ucsd.edu" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  avatar = "photo.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
 
   email = "idrhee dot ucsd.edu"
   address = "SSB 322, 9500 Gilman Drive, #0521, La Jolla, CA 92093-0521"
