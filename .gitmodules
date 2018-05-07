@@ -1,0 +1,3 @@
+[submodule "idrhee"]
+	path = idrhee
+	url = git://github.com/idrhee/idrhee
